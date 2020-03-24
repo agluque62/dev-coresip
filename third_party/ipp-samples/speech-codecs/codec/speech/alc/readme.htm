@@ -1,0 +1,140 @@
+<html>
+<head>
+<title>
+Intel&reg;Integrated Performance Primitives Sample Readme  
+</title>
+</head>
+<body text="#000000" bgColor="#ffffff">
+<CENTER>
+<H1>
+<B>
+<I>
+Intel  
+<SUP>
+&reg; 
+</SUP>
+Integrated Performance Primitives  
+<BR>
+USC ALC filter  
+</I>
+</B>
+</H1>
+</CENTER>
+<H5>
+<A href="#Overview">
+Overview  
+</A>
+<BR>
+<a href="#USC ALC description">
+USC ALC description  
+</a>
+<BR>
+&nbsp;  
+</H5>
+<H2>
+<A name=Overview>
+</A>
+Overview  
+</H2>
+The USC ALC (Audio Level Control) filer has been implemented using the Intel  
+<sup>
+&reg; 
+</sup>
+Integrated Performance Primitives (Intel  
+<sup>
+&reg; 
+</sup>
+IPP) Speech Coding functions.  
+<font face="Times New Roman">
+&nbsp;The USC ALC filter  
+</font>
+supports 16bit narrowband 8000 Hz or wideband 16000 Hz PCM signal compression with 10ms frame length and produce output 8000 Hz or wideband 16000 Hz PCM signal with 
+predefined level -6 dBm0.  
+<P>
+Additional information on this software as well as other Intel  
+<sup>
+&reg; 
+</sup>
+Software Development Products is available at  
+<A href="http://developer.intel.com/software/products/">
+http://developer.intel.com/software/products/  
+</A>
+.  
+<H2>
+<a name="USC ALC description">
+</a>
+USC ALC description  
+</H2>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+For USC Interface description refer to USC manual.&nbsp;  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+&nbsp;  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+USC ALC filter parameters:  
+</p>
+<ul>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Filter name: IPP_ALC  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Algorithm: Intel proprietary&nbsp;  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Linkage: USC_ALC_Fxns  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Sampling rate: 16bit linear 8000, 16000 Hz  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Minimum frame: 10ms  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Maximum frame: 10ms  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Preferable frame: 10ms  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Output frame types (value): ACTIVE  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Predefined output signal level: -6 dBm0  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Standards: ITU-T G.169  
+</p>
+</li>
+</ul>
+<FONT size=-2>
+<P>
+<BR>
+</P>
+</FONT>
+
+<DIV id=IPP_Copyright>
+Copyright &copy; 2009, Intel Corporation. All rights reserved.
+</DIV>
+
+</body>
+</html>

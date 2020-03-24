@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Exceptions.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Exports.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="RdRxPort.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SipAgent.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SipCall.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundPort.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundRxPort.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="WavPlayer.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="WavRecorder.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="wg67subscription.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="WavPlayerToRemote.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordPort.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CoreSip.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Exceptions.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Global.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Guard.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="RdRxPort.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="SipAgent.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="SipCall.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundPort.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundRxPort.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="WavPlayer.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="WavRecorder.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="wg67subscription.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="WavPlayerToRemote.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordPort.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{6fca187a-4d11-4606-9f12-4656f33de58b}</UniqueIdentifier>
+      <Extensions>*.c*</Extensions>
+    </Filter>
+    <Filter Include="Include">
+      <UniqueIdentifier>{bcdc6566-0bfe-4a7b-b037-b98056de9101}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

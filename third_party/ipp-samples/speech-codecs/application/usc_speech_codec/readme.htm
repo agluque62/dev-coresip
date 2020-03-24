@@ -1,0 +1,502 @@
+<html>
+
+<head>
+    <title>
+    Intel&reg; IPP Samples -
+    USC Speech Sample for Windows*
+    </title>
+</head>
+
+<body>
+
+
+<h1 align="center">
+    Intel<sup>&reg;</sup> Integrated Performance Primitives
+    <br>
+    USC Speech Sample for Windows*
+</h1>
+
+<p>
+<b>
+<a href="#IPP_SAMPLES__Disclaimer">                             Disclaimer                             </a><br />
+<a href="#IPP_SAMPLES__License_Definitions">                    License Definitions                    </a><br />
+<a href="#IPP_SAMPLES__Overview">                               Overview                               </a><br />
+<a href="#IPP_SAMPLES__How_to_Build_Source_Code">               How to Build Source Code               </a><br />
+<a href="#IPP_SAMPLES__Running_the_Sample">                     Running the Sample                     </a><br />
+</b>
+</p>
+
+
+<h2>
+<a name=IPP_SAMPLES__Disclaimer>
+Disclaimer</a>
+</h2>
+
+<P class=MsoNormal>
+<SPAN style="FONT-SIZE: 10pt; COLOR: windowtext; ">
+INFORMATION IN THIS DOCUMENT IS PROVIDED IN CONNECTION WITH INTEL  
+<SUP>
+&reg; 
+</SUP>
+PRODUCTS. NO LICENSE, EXPRESS OR IMPLIED, BY ESTOPPEL OR OTHERWISE, TO ANY INTELLECTUAL PROPERTY RIGHTS IS GRANTED BY THIS DOCUMENT. EXCEPT AS PROVIDED IN INTEL'S TERMS AND CONDITIONS OF SALE FOR SUCH PRODUCTS, INTEL ASSUMES NO LIABILITY WHATSOEVER, AND INTEL DISCLAIMS ANY EXPRESS OR IMPLIED WARRANTY, RELATING TO SALE AND/OR USE OF INTEL PRODUCTS INCLUDING LIABILITY OR WARRANTIES RELATING TO FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR INFRINGEMENT OF ANY PATENT, COPYRIGHT OR OTHER INTELLECTUAL PROPERTY RIGHT.  
+</SPAN>
+</P>
+<P>
+Intel products are not intended for use in medical, life saving, life sustaining, critical control or safety systems, or in nuclear facility applications. Intel may make changes to specifications and product descriptions at anytime, without notice.  
+</P>
+
+
+<h2>
+<a name=IPP_SAMPLES__License_Definitions>
+License Definitions</a>
+</h2>
+
+<P>
+By downloading and installing this sample, you hereby agree that the accompanying Materials are being provided to you under the terms and conditions of the End User License Agreement for the Intel  
+<SUP>
+&reg; 
+</SUP>
+Integrated Performance Primitives (Intel  
+<SUP>
+&reg; 
+</SUP>
+IPP) product previously accepted by you. Please refer to the file  
+<B>
+ippEULA.rtf or ippEULA.txt  
+</B>
+located in the root directory of your Intel  
+<SUP>
+&reg; 
+</SUP>
+IPP product installation for more information.&nbsp;  
+</P>
+<p>
+The G.711, G.722, G.722.1, G.722.2, AMRWB, Extended AMRWB (AMRWB+), G.723.1, G.726, G.728, G.729, GSM AMR, GSM FR are international standards promoted by ITU (  
+<a href="http://www.itu.int">
+http://www.itu.int  
+</a>
+), ETSI (  
+<a href="http://www.etsi.org">
+http://www.etsi.org  
+</a>
+), 3GPP (  
+<a href="http://www.3gpp.org">
+http://www.3gpp.org  
+</a>
+) and other organizations. Implementations of these standards, or the standard enabled platforms may require licenses from various entities, including Intel Corporation.  
+</p>
+
+
+<h2>
+<a name=IPP_SAMPLES__Overview>
+Overview</a>
+</h2>
+
+The USC speech coding sample supports a variety of speech coding formats and performs compression/decompression in compliance with the 3GPP TS 26 
+071, 073, 171, 173, 174, 190-194, 273, 274, 290 specifications, ITU-T G.722, G.722.1,  
+<span class="GramE" lang="EN-US">
+G.722.2, G.723.1/A,  
+</span>
+G.726/A, G.728/I/G/H/J, G.729/A/B/D/E/I/C/C+, G.711/I/II recommendations and ETSI GSM 06.10-06.12, 06.31-06.32, 06.90-06.94 specifications and have been implemented using the Intel  
+<sup>
+&reg; 
+</sup>
+Integrated Performance Primitives (Intel  
+<sup>
+&reg; 
+</sup>
+IPP) Speech Coding functions.&nbsp;The sample is a command line based application which processes data given by single input file and stores the result in an output file.&nbsp; When in encoding mode the sample consumes either 16bit narrowband 8000 Hz or 16bit wideband 16000 Hz raw PCM data or 8 bit narrowband 8000 Hz A-Law/Mu-Law PCM or 8bit wideband 16000 Hz A-Law/Mu-Law PCM data stored in WAVE file format and produces a compressed USC bitstream stored in a compressed WAVE file. The USC bitstream can be decompressed with the sample and a the lossy copy of original PCM file will be created in the same band and format.  
+<p>
+The header of the USC file format is similar to the header of WAVE file format for non-PCM data. Bitstream frames are consecutively stored in data section of the USC file. Each bitstream frame is stored with small header followed by the bitstream data. The bitstream header format is depicted below:  
+</p>
+
+<pre>
+ 0               1               2               3               4               5
+ 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7
+-------------------------------------------------------------------------------------------------
+|                    Bitrate                    |  Frame type   |         Frame length          |
+-------------------------------------------------------------------------------------------------
+</pre>
+<p>
+A header comprises of six octets: first three octets represent bitrate in bps,
+the second octet represents frame type and latter two octets contain the pure
+bitstream data length, not including the header length.
+The bitsrteam data follows after the header.
+In some cases, depending on the silence compression scheme used, the codec can
+produce an empty bitstream and so a frame header with zero data length is created.
+</p>
+
+<p>
+Additional information on this software as well as other Intel  
+<sup>
+&reg; 
+</sup>
+Software Development Products is available at  
+<A href="http://developer.intel.com/software/products/">
+http://developer.intel.com/software/products/  
+</A>.
+</p>
+
+
+<h2>
+<a name="IPP_SAMPLES__How_to_Build_Source_Code">
+How to Build Source Code</a>
+</h2>
+
+<h3>
+Build target by Microsoft Visual Studio
+</h3>
+<ul>
+    <li>Set system environment variable <tt><b>IPPROOT</b></tt></li>
+    <li>Open solution/project file in related Visual Studio</li>
+    <li>Select configuration/platform you need</li>
+    <li>Build all projects in Visual Studio</li>
+</ul>
+
+
+<h2>
+<a name=IPP_SAMPLES__Running_the_Sample>
+Running the Sample</a>
+</h2>
+
+<p>
+For information on building the sample, see the  
+<span class="SpellE">
+readme  
+</span>
+file in the ipp_samples\  
+<span class="SpellE">
+speech-codecs  
+</span>
+directory.  
+</p>
+<ul>
+<li>
+To run the USC speech sample for compression, type:&nbsp;  
+</li>
+</ul>
+<p>
+<b>
+usc_speech_codec.exe [options] &lt;inWAVEFile&gt; &lt;outUSCFile&gt;&nbsp;  
+</b>
+</p>
+<p>
+Encoder option list:&nbsp;  
+</p>
+<p>
+<b>
+-format  
+</b>
+IPP_G711A | IPP_G711U | IPP_AMRWB | IPP_G722.1 | IPP_G722 | IPP_G723.1 | IPP_G726 
+| IPP_G728 | IPP_G729A | IPP_G729I | IPP_G729AFP | IPP_G729IFP | IPP_GSMAMR | IPP_GSMFR 
+| IPP_AMRWBE | IPP_MSRTA_FP - codec option.  
+</p>
+<blockquote>
+<p>
+IPP_G711A - ITU G.711 A-law  
+</p>
+<p>
+IPP_G711U - ITU G.711  
+<font face="Times New Roman">
+µ-Law  
+</font>
+</p>
+<p>
+IPP_G722.1 - ITU G.722.1 wideband codec</p>
+<p>
+IPP_G722 - ITU G.722 wideband codec  
+</p>
+<p>
+IPP_G723.1 - ITU G.723.1/A codec  
+</p>
+<p>
+IPP_G726 - ITU G.726/A codec  
+</p>
+<p>
+IPP_G728 - ITU G.728/G/I/H/J codec  
+</p>
+<p>
+IPP_G729I - ITU G.729 codec,  
+</p>
+<p>
+IPP_G729A - ITU G.729AB codec  
+</p>
+<p>
+IPP_G729IFP - ITU G.729 codec, alternative floating-point implementation  
+</p>
+<p>
+IPP_G729AFP - ITU G.729AB codec, alternative floating-point implementation  
+</p>
+<p>
+IPP_GSMAMR - ETSI GSM 06.90 codec  
+</p>
+<p>
+IPP_GSMFR - ETSI GSM 06.10 codec  
+</p>
+<p>
+IPP_AMRWB - ITU G.722.2 (3GPP AMRWB) codec  
+</p>
+<p>
+IPP_AMRWBE - 3GPP extended AMRWB (AMRWB+) codec  
+</p>
+<p>
+IPP_MSRTA_FP - Microsoft Real-Time Audio codec, floating-point implementation </p>
+</blockquote>
+<p>
+<b>
+-r  
+</b>
+- bitrate in bps  
+</p>
+<blockquote>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+IPP_G711A and IPP_G711U formats:
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+&nbsp;&nbsp;&nbsp;&nbsp; -r64000&nbsp;  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+IPP_G722 format:  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+&nbsp;&nbsp;&nbsp;&nbsp;  
+-r48000&nbsp; |&nbsp; 56000&nbsp; |&nbsp; 64000
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+IPP_G722.1 format:  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+&nbsp;&nbsp;&nbsp;&nbsp;
+-r16000&nbsp; | &nbsp;24000&nbsp; | &nbsp;32000&nbsp; |&nbsp; 48000</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+IPP_G723.1 format:  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+&nbsp;&nbsp;&nbsp;&nbsp; -r5300&nbsp; |&nbsp; 6300  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+IPP_G726 format:  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+&nbsp;&nbsp;&nbsp;&nbsp; -r16000&nbsp; |&nbsp; 24000&nbsp; |&nbsp; 32000&nbsp; |&nbsp; 40000  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+IPP_G728 format:  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+&nbsp;&nbsp;&nbsp;&nbsp; -r9600 | 12800 | 16000 | 40000  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+IPP_G729A and IPP_G729AFP formats:  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+&nbsp;&nbsp;&nbsp;&nbsp; -r8000  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+IPP_G729I and IPP_G729IFP formats:  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+&nbsp;&nbsp;&nbsp;&nbsp; -r6400 | 8000 | 11800  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+IPP_GSMAMR format:  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+&nbsp;&nbsp;&nbsp;&nbsp; -r12200 | 10200 | 7950 | 7400 | 6700 | 5900 | 5150 | 4750  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+IPP_GSMFR format:  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+&nbsp;&nbsp;&nbsp;&nbsp; -r13000&nbsp;  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+IPP_AMRWB format:  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+&nbsp;&nbsp;&nbsp;&nbsp; -r6600 | 8850 | 12650 | 14250 | 15850 | 18250 | 19850 | 
+23050 | 23850  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+IPP_AMRWBE format:  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+&nbsp;&nbsp;&nbsp;&nbsp;  
+-r6600 | 8850 | 12650 | 14250 | 15850 | 18250 | 19850 | 23050 | 23850 | 10400 
+| 12000 | 12400 | 12800 | 13600 | 14000 | 14400 | 15200 | 16000 | 16400 | 16800 
+| 17200 | 18000 | 18400 | 19200 | 20000 | 20400 | 20800 | 21200 | 22400 | 23200 
+| 24000 | 25600 | 26000 | 26800 | 28800 | 29600 | 30000 | 32000  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+IPP_MSRTA_FP format:  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+&nbsp;&nbsp;&nbsp;&nbsp; -r8800 | 18000</p>
+</blockquote>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+&nbsp;  
+<b>
+-list&nbsp;  
+</b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enumerates supported formats.  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+<b>
+&nbsp;-v&nbsp;  
+</b>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VAD enabled. Default: VAD disabled.&nbsp;  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+<b>
+&nbsp;-n&nbsp;&nbsp;  
+</b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; output additional information.  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+&nbsp;  
+<b>
+-o &lt;logFile&gt;  
+</b>
+&nbsp;&nbsp;&nbsp;&nbsp; write to &lt;logFile&gt; file log information.  
+<br>
+<b>
+&lt;inWAVEFile&gt;  
+</b>
+- input audio WAV file, mono 8000 Hz (G711, G723, G726, G728, G729, GSMAMR, GSMFR, AMRWBE, 
+MSRTA) or mono 16000 Hz (G722, G722SB, AMRWB, AMRWBE, MSRTA) or stereo 8000 Hz (AMRWBE) or stereo 16000 Hz (AMRWBE)
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+<b>
+&lt;outUSCFile&gt;  
+</b>
+- output bitstream file in USC compressed WAV file format.&nbsp;  
+</p>
+<ul>
+<li>
+To run the USC speech sample for decompression, type:&nbsp;  
+</li>
+</ul>
+<p>
+<b>
+usc_speech_codec.exe [options] &lt;inUSCFile&gt; &lt;outWAVEFile&gt;&nbsp;  
+</b>
+</p>
+<p>
+Decoder option list:  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+<b>
+-list  
+</b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Enumerates supported formats  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+<b>
+-n&nbsp;&nbsp;&nbsp;  
+</b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; output additional information.  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+<b>
+-o &lt;logFile&gt;  
+</b>
+&nbsp;&nbsp;&nbsp;&nbsp; write to &lt;logFile&gt; file log information.  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+<b>
+-alaw  
+</b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Convert decompressed output file to the A-Law PCM.  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+<b>
+-mulaw  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+</b>
+Convert decompressed output file to the Mu-Law PCM.  
+<br>
+<b>
+&lt;inUSCFile&gt;  
+</b>
+- input bitstream file in USC compressed WAV file format.  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+<b>
+&lt;outWAVEFile&gt;  
+</b>
+- output audio WAV file, mono 8000 Hz (G711, G723, G726, G728, G729, GSMAMR, GSMFR, AMRWBE, 
+MSRTA) or mono 16000 Hz (G722, G722SB, AMRWB, AMRWBE, MSRTA)  
+or stereo 8000 Hz (AMRWBE)
+or stereo 16000 Hz (AMRWBE)
+</p>
+<ul>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+To run the USC speech sample for timing:&nbsp;  
+</p>
+</li>
+</ul>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+<b>
+usc_speech_codec.exe -timing[CodecName] &lt;RepeatNum&gt; [options] &lt;inWAVEFile&gt;&nbsp;  
+</b>
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Timing options list:  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+<b>
+[CodecName]&nbsp;&nbsp;  
+</b>
+Codec name (See -format encoder option description), for example -timingIPP_G728. If unspecified all codecs will be timed (according to given &lt;inWAVEFile&gt; format)  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+<b>
+&lt;RepeatNum&gt;  
+</b>
+How many times repeat &lt;inWAVEFile&gt;  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+<b>
+-n&nbsp;&nbsp;&nbsp;  
+</b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; output additional information.  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+<b>
+-c&nbsp;&lt;CSVFile&gt;&nbsp;  
+</b>
+&nbsp; write to &lt;CSVFile&gt; file information about coder performance in CSV Excel format.  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+<b>
+-o &lt;logFile&gt;  
+</b>
+&nbsp;&nbsp;&nbsp;&nbsp; write to &lt;logFile&gt; file log information.  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+<b>
+&lt;inWAVEFile&gt;  
+</b>
+- input audio WAV file, mono 8000 Hz (G711, G723, G726, G728, G729, GSMAMR, GSMFR, AMRWBE, 
+MSRTA) or mono 16000 Hz (G722, G722SB, AMRWB, AMRWBE, MSRTA)  
+or stereo 8000 Hz (AMRWBE)
+or stereo 16000 Hz (AMRWBE)
+</p>
+<FONT size=-2>
+<p>
+Intel, the Intel logo, Intel SpeedStep, Intel NetBurst, Intel NetStructure, MMX, i386, i486, Intel386, Intel486, Intel740, IntelDX2, IntelDX4, IntelSX2,Celeron, Intel Centrino, Intel Xeon, Intel XScale, Itanium, Pentium, Pentium II Xeon, Pentium III Xeon, Pentium M, and VTune are trademarks or registered trademarks of Intel Corporation or its subsidiaries in the United States and other countries.  
+<P>
+<BR>
+* Other names and brands may be claimed as the property of others.  
+<BR>
+<BR>
+</P>
+</FONT>
+
+<DIV id=IPP_Copyright>
+Copyright &copy; 2005-2009, Intel Corporation. All rights reserved.
+</DIV>
+
+</body>
+</html>

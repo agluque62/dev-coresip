@@ -1,0 +1,378 @@
+<html>
+
+<head>
+    <title>
+    Intel&reg; IPP Samples -
+    UMC Speech RTP Codec Sample for Windows*
+    </title>
+</head>
+
+<body>
+
+
+<h1 align="center">
+    Intel<sup>&reg;</sup> Integrated Performance Primitives
+    <br>
+    UMC Speech RTP Codec Sample for Windows*
+</h1>
+
+<p>
+<b>
+<a href="#IPP_SAMPLES__Disclaimer">                             Disclaimer                             </a><br />
+<a href="#IPP_SAMPLES__License_Definitions">                    License Definitions                    </a><br />
+<a href="#IPP_SAMPLES__Overview">                               Overview                               </a><br />
+<a href="#IPP_SAMPLES__How_to_Build_Source_Code">               How to Build Source Code               </a><br />
+<a href="#IPP_SAMPLES__Running_the_Sample">                     Running the Sample                     </a><br />
+</b>
+</p>
+
+
+<h2>
+<a name="IPP_SAMPLES__Disclaimer">
+Disclaimer</a>
+</h2>
+
+<P class=MsoNormal>
+<SPAN style="FONT-SIZE: 10pt; COLOR: windowtext; ">
+INFORMATION IN THIS DOCUMENT IS PROVIDED IN CONNECTION WITH INTEL  
+<SUP>
+&reg; 
+</SUP>
+PRODUCTS. NO LICENSE, EXPRESS OR IMPLIED, BY ESTOPPEL OR OTHERWISE, TO ANY INTELLECTUAL PROPERTY RIGHTS IS GRANTED BY THIS DOCUMENT. EXCEPT AS PROVIDED IN INTEL'S TERMS AND CONDITIONS OF SALE FOR SUCH PRODUCTS, INTEL ASSUMES NO LIABILITY WHATSOEVER, AND INTEL DISCLAIMS ANY EXPRESS OR IMPLIED WARRANTY, RELATING TO SALE AND/OR USE OF INTEL PRODUCTS INCLUDING LIABILITY OR WARRANTIES RELATING TO FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR INFRINGEMENT OF ANY PATENT, COPYRIGHT OR OTHER INTELLECTUAL PROPERTY RIGHT.  
+</SPAN>
+</P>
+<P>
+Intel products are not intended for use in medical, life saving, life sustaining, critical control or safety systems, or in nuclear facility applications. Intel may make changes to specifications and product descriptions at anytime, without notice.  
+</P>
+
+
+<h2>
+<a name="IPP_SAMPLES__License_Definitions">
+License Definitions</a>
+</h2>
+
+<P>
+By downloading and installing this sample, you hereby agree that the accompanying Materials are being provided to you under the terms and conditions of the End User License Agreement for the Intel  
+<SUP>
+&reg; 
+</SUP>
+Integrated Performance Primitives (Intel  
+<SUP>
+&reg; 
+</SUP>
+IPP) product previously accepted by you. Please refer to the file  
+<B>
+ippEULA.rtf or ippEULA.txt  
+</B>
+located in the root directory of your Intel  
+<SUP>
+&reg; 
+</SUP>
+IPP product installation for more information.&nbsp;  
+</P>
+<P>
+The G.711, G.722, G.722.1, G.722.2, AMRWB, Extended AMRWB (AMRWB+), G.723.1, 
+G.726, G.728, G.729, GSM AMR, GSM FR are international standards promoted by ITU 
+( <a href="http://www.itu.int">http://www.itu.int </a>), ETSI (
+<a href="http://www.etsi.org">http://www.etsi.org </a>), 3GPP (
+<a href="http://www.3gpp.org">http://www.3gpp.org </a>) and other organizations. Implementations of these standards, or the standard enabled platforms may require licenses from various entities, including Intel Corporation.  
+</P>
+
+
+<h2>
+<a name="IPP_SAMPLES__Overview">
+Overview</a>
+</h2>
+
+<div class="Section1">
+The UMC RTP speech codec sample supports audio compression and decompression to and from variety RTP payloads formats in compliance with following standards: 
+3GPP TS 26 171, 173, 174, 190-194, 273, 274, 290 specifications, ITU-T 
+G.722, G.722.1, <span class="GramE" lang="EN-US">G.722.2, G.723.1/A, </span>
+G.726/A, G.728/I/G/H/J, G.729/A/B/D/E/I/C/C+, G.711/I/II recommendations and 
+ETSI GSM 06.10-06.12, 06.31-06.32, 06.90-06.94 specifications, RFC 4867 and have been implemented using the Intel  
+<sup>
+&reg; 
+</sup>
+Integrated Performance Primitives (Intel  
+<sup>
+&reg; 
+</sup>
+IPP) Speech Coding functions.&nbsp;The sample is a command line based application which processes a single input file and stores the result in a single output file.&nbsp; When in encoding mode the sample compresses audio data from an input WAV file storing compressed data in  
+<i>
+rtpdump  
+</i>
+file  
+<i>
+</i>
+format. In decoding mode the sample performs reverse decompression from of an input file in  
+<i>
+rtpdump  
+</i>
+format and restore audio data in WAV file format.  
+</div>
+<p>
+Aditional information on this software as well as other Intel  
+<sup>
+&reg; 
+</sup>
+Software Development Products is available at
+<a href="http://developer.intel.com/software/products/">
+http://developer.intel.com/software/products/</a>.
+</p>
+
+
+<h2>
+<a name="IPP_SAMPLES__How_to_Build_Source_Code">
+How to Build Source Code</a>
+</h2>
+
+<h3>
+Build target by Microsoft Visual Studio
+</h3>
+<ul>
+    <li>Set system environment variable <tt><b>IPPROOT</b></tt></li>
+    <li>Open solution/project file in related Visual Studio</li>
+    <li>Select configuration/platform you need</li>
+    <li>Build all projects in Visual Studio</li>
+</ul>
+
+
+<h2>
+<a name="IPP_SAMPLES__Running_the_Sample">
+Running the Sample</a>
+</h2>
+
+<p>
+For information on building the sample, see the  
+<span class="SpellE">
+readme  
+</span>
+file in the ipp_samples\  
+<span class="SpellE">
+speech-codecs  
+</span>
+directory.  
+</p>
+<p>
+<span lang="EN-US">
+In order to run the executable created by this sample, the Intel&reg;IPP DLLs must be on the system's path. DLLs are located in the bin subdirectory of the root directory of the Intel&reg;IPP installation (IPPROOT). This can be done by setting the PATH environment variable manually or invoking the batch file: &quot;%IPPROOT%\tools\  
+<span class="SpellE">
+env\ippenv.bat  
+</span>
+&quot; from the Intel&reg;IPP installation.  
+</span>
+</p>
+<p>
+To run the sample for encode or for decode following commands line to be used:</p>
+<p>
+<b>
+usc_speech_rtp_codec.exe [options] &lt;infile&gt; &lt;outfile&gt;</b></p>
+<p>
+Depending on which of two formats WAVE or RTPDump has the input file &lt;infile&gt; 
+either encode or decode operation will be performed respectively.&nbsp; For 
+encode operation the output file&lt;outfile&gt; is stored in RTPDump format, for 
+decode ouput file is stored in WAVE format.&nbsp;&nbsp;
+</p>
+<p>
+Option list:&nbsp;  
+</p>
+<p>
+<b>
+-format  
+&lt;codecname&gt;&nbsp; -  
+</b>codec option</p>
+<p>
+<b>
+-r&lt;bitrate&gt;</b> - bitrate option</p>
+<p>
+<b>
+-v</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -VAD enabled. Default: VAD disabled.  
+</p>
+<p>&nbsp;&nbsp;&nbsp; List of supported formats and bitrates:</p>
+<table x:str border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 641px" id="table1">
+	<colgroup>
+		<col width="118" style="width: 89pt">
+		<col width="402" style="width: 302pt">
+	</colgroup>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="width: 164px; font-weight: 700; font-family: Arial, sans-serif; color: #000000; font-size: 10.0pt; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+		<font face="Times New Roman" size="3">Codec name</font></td>
+		<td style="width: 464px; font-weight: 700; font-family: Arial, sans-serif; color: #000000; font-size: 10.0pt; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+		Supported bitrate, in bps</td>
+		<td style="width: 464px; font-weight: 700; font-family: Arial, sans-serif; color: #000000; font-size: 10.0pt; font-style: normal; text-decoration: none; text-align: general; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 1px; padding-right: 1px; padding-top: 1px">
+		<font face="Times New Roman" size="3">Codec description</font></td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="153">
+		<font face="Times New Roman" size="3">IPP_G711A&nbsp;&nbsp;&nbsp;</font></td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		64000&nbsp; </td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		<font face="Times New Roman" size="3">ITU G.711 A-law</font></td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="153">
+		<font face="Times New Roman" size="3">IPP_G711U&nbsp;&nbsp;&nbsp;</font></td>
+		<td x:str="ITU G.711 µ-Law " style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		64000&nbsp; </td>
+		<td x:str="ITU G.711 µ-Law " style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		<font face="Times New Roman" size="3">ITU G.711 µ-Law&nbsp;</font></td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="153">
+		<font face="Times New Roman" size="3">IPP_G722.1&nbsp;&nbsp;&nbsp;</font></td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		16000, 24000, 32000</td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		<font face="Times New Roman" size="3">ITU G.722.1 wideband codec</font></td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="153">
+		<font face="Times New Roman" size="3">IPP_G722&nbsp;&nbsp;&nbsp;&nbsp;</font></td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		48000, 56000, 64000 </td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		<font face="Times New Roman" size="3">ITU G.722 wideband codec</font></td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="153">
+		<font face="Times New Roman" size="3">IPP_G723.1&nbsp;&nbsp;</font></td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		5300, 6300 </td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		<font face="Times New Roman" size="3">ITU G.723.1/A codec</font></td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="153">
+		<font face="Times New Roman" size="3">IPP_G726&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		16000, 24000, 32000, 40000 </td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		<font face="Times New Roman" size="3">ITU G.726/A codec</font></td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="153">
+		<font face="Times New Roman" size="3">IPP_G728&nbsp;&nbsp;&nbsp;&nbsp;</font></td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		9600, 12800, 16000, 40000</td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		<font face="Times New Roman" size="3">ITU G.728/G/I/H/J codec</font></td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="153">
+		<font face="Times New Roman" size="3">IPP_G729I&nbsp;&nbsp;&nbsp;&nbsp;</font></td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		6400, 8000, 11800 </td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		<font face="Times New Roman" size="3">ITU G.729 codec,</font></td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="153">
+		<font face="Times New Roman" size="3">IPP_G729A&nbsp;&nbsp;&nbsp;&nbsp;</font></td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		8000 </td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		<font face="Times New Roman" size="3">ITU G.729AB codec</font></td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="153">
+		<font face="Times New Roman" size="3">IPP_G729IFP&nbsp;&nbsp;&nbsp;&nbsp;</font></td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		6400, 8000, 11800 </td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		<font face="Times New Roman" size="3">ITU G.729 codec, alternative 
+		floating-point implementation</font></td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="153">
+		<font face="Times New Roman" size="3">IPP_G729AFP&nbsp;&nbsp;&nbsp;</font></td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		8000 </td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		<font face="Times New Roman" size="3">ITU G.729AB codec, alternative 
+		floating-point implementation</font></td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="153">
+		<font face="Times New Roman" size="3">IPP_GSMAMR&nbsp;&nbsp;&nbsp;</font></td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		12200, 10200, 7950, 7400, 6700, 5900, 5150, 4750 </td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		<font face="Times New Roman" size="3">ETSI GSM 06.90 codec</font></td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="153">
+		<font face="Times New Roman" size="3">IPP_GSMFR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		13000&nbsp; </td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		<font face="Times New Roman" size="3">ETSI GSM 06.10 codec</font></td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="153">
+		<font face="Times New Roman" size="3">IPP_AMRWB&nbsp;&nbsp;&nbsp;</font></td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		6600, 8850, 12650, 14250, 15850, 18250, 19850, 23050, 23850</td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		<font face="Times New Roman" size="3">ITU G.722.2 (3GPP AMRWB) codec</font></td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="153">
+		<font face="Times New Roman" size="3">IPP_AMRWBE&nbsp;&nbsp;</font></td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		6600, 8850, 12650, 14250, 15850, 18250, 19850, 23050, 23850, 10400, 
+		12000, 12400, 12800, 13600, 14000, 14400, 15200, 16000, 16400, 16800, 
+		17200, 18000, 18400, 19200, 20000, 20400, 20800, 21200, 22400, 23200, 
+		24000, 25600, 26000, 26800, 28800, 29600, 30000, 32000 </td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		<p style="text-align: justify"><font face="Times New Roman" size="3">
+		3GPP extended AMRWB (AMRWB+) codec</font></td>
+	</tr>
+	<tr height="17" style="height:12.75pt">
+		<td height="17" style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="153">
+		<font face="Times New Roman" size="3">IPP_MSRTA_FP&nbsp;&nbsp;</font></td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		8800, 18000</td>
+		<td style="text-align: left; color: #000000; font-size: 10.0pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; border-style: double; border-width: 3px; padding-left: 12px; padding-right: 1px; padding-top: 1px" width="453">
+		<font face="Times New Roman" size="3">Microsoft Real-Time Audio codec, 
+		floating-point implementation</font></td>
+	</tr>
+</table>
+</blockquote>
+<p>
+<b>
+-b&lt;num&gt;  
+</b>
+- RTP payload format type for IPP_GSMAMR and IPP_AMRWB formats,&nbsp; &lt;num&gt;=0 - Bandwidth-Efficient Mode, 
+=1 - Octet-Aligned Mode</p>
+<p>
+<b>
+-p&lt;num&gt;  
+</b>
+- Sets &lt;num&gt; - number of frames in the RTP packet.  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+<b>
+-list  
+</b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Enumerates supported formats, 
+other parameters are ignored.</p>
+<FONT size=-2>
+<div class="Section1">
+<p>
+Intel, the Intel logo, Intel SpeedStep, Intel NetBurst, Intel NetStructure, MMX, i386, i486, Intel386, Intel486, Intel740, IntelDX2, IntelDX4, IntelSX2,Celeron, Intel Centrino, Intel Xeon, Intel XScale, Itanium, Pentium, Pentium II Xeon, Pentium III Xeon, Pentium M, and VTune are trademarks or registered trademarks of Intel Corporation or its subsidiaries in the United States and other countries.  
+</div>
+<P>
+<BR>
+* Other names and brands may be claimed as the property of others.  
+<BR>
+<BR>
+</P>
+</FONT>
+
+<DIV id=IPP_Copyright>
+Copyright &copy; 2002-2009, Intel Corporation. All rights reserved.
+</DIV>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{8fec483d-b1f9-449b-af2c-76ca58aaa703}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Source Files\common">
+      <UniqueIdentifier>{20f9169c-becb-4de6-b383-94e4e4b77a2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\decode">
+      <UniqueIdentifier>{dfafe5b9-2506-4888-8c4f-7171965b3250}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\encode">
+      <UniqueIdentifier>{2ea83d94-d9f2-4066-9a4a-d51d4a587260}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{0fbd160e-1aa1-4454-893c-cf1c0b2fbbf1}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\g7221\common\basic_op.c">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\g7221\common\common.c">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\g7221\common\huff_tab.c">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\g7221\common\tables.c">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\g7221\decode\coef2sam.c">
+      <Filter>Source Files\decode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\g7221\decode\dct4_s.c">
+      <Filter>Source Files\decode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\g7221\decode\decoder.c">
+      <Filter>Source Files\decode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\g7221\encode\dct4_a.c">
+      <Filter>Source Files\encode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\g7221\encode\encoder.c">
+      <Filter>Source Files\encode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\g7221\encode\sam2coef.c">
+      <Filter>Source Files\encode</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\g7221\common\basic_op.h">
+      <Filter>Source Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\g7221\common\basic_op_i.h">
+      <Filter>Source Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\g7221\common\config.h">
+      <Filter>Source Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\g7221\common\count.h">
+      <Filter>Source Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\g7221\common\huff_def.h">
+      <Filter>Source Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\g7221\common\huff_tab.h">
+      <Filter>Source Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\g7221\common\tables.h">
+      <Filter>Source Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\g7221\common\typedef.h">
+      <Filter>Source Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\g7221\decode\dct4_s.h">
+      <Filter>Source Files\decode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\g7221\encode\dct4_a.h">
+      <Filter>Source Files\encode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\g7221\common\defs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

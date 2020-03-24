@@ -1,0 +1,2021 @@
+<HTML>
+<HEAD>
+<TITLE>
+Intel&reg;Integrated Performance Primitives Sample Readme  
+</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<style>
+<!-- table.MsoNormalTable {mso-style-parent:""; font-size:10.0pt; font-family:"Times New Roman"; } -->
+</style>
+</HEAD>
+<BODY text=#000000 bgColor=#ffffff>
+<CENTER>
+<H1>
+<B>
+<I>
+Intel  
+<SUP>
+&reg; 
+</SUP>
+Integrated Performance Primitives  
+<BR>
+USC AMRWBE codec  
+</I>
+</B>
+</H1>
+</CENTER>
+<H5>
+<A href="#Overview">
+Overview  
+</A>
+<BR>
+<a href="#USC Codec description">
+USC Codec description  
+</a>
+<BR>
+&nbsp;  
+</H5>
+<H2>
+<A name=Overview>
+</A>
+Overview  
+</H2>
+The USC AMRWBE speech codec is compliant with 3GPP TS 26.290 specification for Extended Adaptive Multi-Rate - WideBand (AMR WB+) codec promoted  
+<font face="Times New Roman">
+3rd Generation Partnership Project (  
+</font>
+<a href="http://www.3gpp.org">
+www.3gpp.org  
+</a>
+) and has been implemented using the Intel  
+<sup>
+&reg; 
+</sup>
+Integrated Performance Primitives (Intel  
+<sup>
+&reg; 
+</sup>
+IPP) Speech Coding functions.  
+<font face="Times New Roman">
+The USC AMRWBE codec  
+</font>
+supports all modes including VAD supported by USC AMRWB codec  
+<span lang="EN-GB">
+and has extended functionality in supporting transform and bandwidth extension coding, stereo mode and audio signals&nbsp;sampled at higher bands: 24/32/48 kHz. USC AMRWBE codec encodes  
+</span>
+16bit PCM signal re-sampled  
+<span lang="EN-GB">
+by using a variable sampling conversion scheme, within  
+</span>
+internal sampling frequency (ISF) in range  
+<span lang="EN-GB" style="font-family: Times New Roman">
+2800-38400 Hz.  
+</span>
+<span lang="EN-GB" style="font-family: Times New Roman">
+USC AMRWBE codec supports  
+</span>
+nine mono 16 KHz  
+<span lang="EN-GB" style="font-family: Times New Roman">
+AMRWB compatible bitrates&nbsp; 6600, 8850, 12650, 14250, 15850, 18250, 19850, 23050, 23850 bps, and thirty six AMRWBE extended bitrates, namely two mono 16/24 KHz bitrates 13600, 24000 bps,&nbsp; two stereo 16/24 KHz bitrates 18000, 24000 bps, eight mono 16/24/32/48 KHz bitrates 10400, 12000, 13600, 15200,&nbsp; 16800, 19200, 20800, 24000 bps, and twenty four stereo 16/24/32/48 KHz bitrates 12400, 12800, 14000, 14400, 15200, 16000, 16400, 17200, 18000, 18400, 19200, 20000, 20400, 21200,&nbsp; 22400, 23200, 24000, 25600, 26000, 26800, 28800, 29600, 30000, 32000 bps.  
+</span>
+<p>
+USC AMRWBE codec is compatible with 3GPP TS 26.273 v6.0.0 (2005-03) ANSI-C Code.  
+</p>
+<P>
+Additional information on this software as well as other Intel  
+<sup>
+&reg; 
+</sup>
+Software Development Products is available at  
+<A href="http://developer.intel.com/software/products/">
+http://developer.intel.com/software/products/  
+</A>
+.  
+<H2>
+<a name="USC Codec description">
+</a>
+USC Codec description  
+</H2>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+For USC Interface description refer to USC manual.&nbsp;  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+&nbsp;  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+USC AMRWBE codec parameters:  
+</p>
+<ul>
+<li>
+<p style="margin-top: 3px; margin-bottom: 3px">
+Codec name: IPP_AMRWBE  
+</li>
+<li>
+<p style="margin-top: 3px; margin-bottom: 3px">
+Compression algorithms: Multi-Rate WideBand Algebraic Code Excited Linear Prediction&nbsp; (  
+<span lang="EN-GB" style="font-family: Times New Roman">
+MRWB-ACELP  
+</span>
+), Transform Coding (TCX) and Bandwidth Extension (BWE)  
+</li>
+<li>
+<p style="margin-top: 3px; margin-bottom: 3px">
+Linkage: USC_AMRWBE_Fxns  
+</li>
+<li>
+<p style="margin-top: 3px; margin-bottom: 3px">
+Sampling: 16bit linear 16000, 24000, 32000, 48000 Hz (8000 Hz for decoder only).  
+</li>
+<li>
+<p style="margin-top: 3px; margin-bottom: 3px">
+Frame duration and frame size:  
+<p style="margin-top: 3px; margin-bottom: 3px">
+<span lang="EN-US">
+At the AMRWB and AMRWB character modes frame size is 20 ms. Four consequence frames are transmitting as one 80ms super frame. Frame size at these modes is sets up to 640 (by default).  
+</span>
+<p style="margin-top: 3px; margin-bottom: 3px" align="left">
+<span lang="EN-US" style="font-size: 12.0pt; font-family: Times New Roman; color: black">
+At the AMRWBE modes frame duration varies depending on the internal sampling frequency.  
+</span>
+<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="571" id="table6">
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 163px; height: 12.75pt; border: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+Internal sampling rate (Hz)  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 123px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+frame duration (ms)  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 111px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+frame size  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 113px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+bitrate f  
+</font>
+</span>
+<span lang="EN-US" style="color: windowtext">
+<font size="3">
+a  
+</font>
+</span>
+<span style="color: windowtext">
+<font size="3">
+ctor  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td valign="top" style="width: 163px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span lang="EN-GB" style="color: windowtext">
+<font size="3">
+12800  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 123px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+160.0  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 111px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<font size="3">
+5120  
+</font>
+</td>
+<td valign="top" style="width: 113px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+1/2  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td valign="top" style="width: 163px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span lang="EN-GB" style="color: windowtext">
+<font size="3">
+14400  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 123px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+142.2  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 111px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<font size="3">
+4550  
+</font>
+</td>
+<td valign="top" style="width: 113px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+9/16  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td valign="top" style="width: 163px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span lang="EN-GB" style="color: windowtext">
+<font size="3">
+16000  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 123px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+128.0  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 111px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<font size="3">
+4096  
+</font>
+</td>
+<td valign="top" style="width: 113px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+5/8  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td valign="top" style="width: 163px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span lang="EN-GB" style="color: windowtext">
+<font size="3">
+17067  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 123px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+120.0  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 111px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+3840  
+</font>
+</span>
+</td>
+<td valign="top" style="width: 113px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+2/3  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td valign="top" style="width: 163px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span lang="EN-GB" style="color: windowtext">
+<font size="3">
+19200  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 123px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+106.7  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 111px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<font size="3">
+3414  
+</font>
+</td>
+<td valign="top" style="width: 113px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+3/4  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td valign="top" style="width: 163px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span lang="EN-GB" style="color: windowtext">
+<font size="3">
+21333  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 123px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+96.0  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 111px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<font size="3">
+3072  
+</font>
+</td>
+<td valign="top" style="width: 113px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+5/6  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td valign="top" style="width: 163px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span lang="EN-GB" style="color: windowtext">
+<font size="3">
+24000  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 123px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+85.3  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 111px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<font size="3">
+2730  
+</font>
+</td>
+<td valign="top" style="width: 113px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+15/16  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td valign="top" style="width: 163px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span lang="EN-GB" style="color: windowtext">
+<font size="3">
+25600  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 123px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+80.0  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 111px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<font size="3">
+2560  
+</font>
+</td>
+<td valign="top" style="width: 113px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+1  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td valign="top" style="width: 163px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span lang="EN-GB" style="color: windowtext">
+<font size="3">
+28800  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 123px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+71.1  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 111px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<font size="3">
+2274  
+</font>
+</td>
+<td valign="top" style="width: 113px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+9/8  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td valign="top" style="width: 163px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span lang="EN-GB" style="color: windowtext">
+<font size="3">
+32000  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 123px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+64.0  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 111px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<font size="3">
+2048  
+</font>
+</td>
+<td valign="top" style="width: 113px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+5/4  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td valign="top" style="width: 163px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span lang="EN-GB" style="color: windowtext">
+<font size="3">
+34133  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 123px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+60.0  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 111px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<font size="3">
+1920  
+</font>
+</td>
+<td valign="top" style="width: 113px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+4/3  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td valign="top" style="width: 163px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span lang="EN-GB" style="color: windowtext">
+<font size="3">
+36000  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 123px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+56.9  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 111px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<font size="3">
+1820  
+</font>
+</td>
+<td valign="top" style="width: 113px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+45/32  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td valign="top" style="width: 163px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span lang="EN-GB" style="color: windowtext">
+<font size="3">
+38400  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 123px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+53.3  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 111px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<font size="3">
+1706  
+</font>
+</td>
+<td valign="top" style="width: 113px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+3/2  
+</font>
+</span>
+</td>
+</tr>
+</table>
+<p style="margin-top: 3px; margin-bottom: 3px">
+<font face="Times New Roman">
+Internal sampling rate is selects by frame size set up to given values.  
+</font>
+<p style="margin-top: 3px; margin-bottom: 3px">
+<font face="Times New Roman">
+With AMRWBE rates frame size sets up to 1280 (25600 Hz) by default, excluding 13.6, 24 kbps mono and 18, 24 kbps stereo rates (AMRWB character modes by default).  
+</font>
+<p style="margin-top: 3px; margin-bottom: 3px">
+<font face="Times New Roman">
+The bit rate also dependents on the internal sampling frequency. &#8220;Bitrate factor&#8221; indicates factor any bit-rate value for 25600 Hz internal sampling factor should be converted with.  
+</font>
+</li>
+<li>
+<p style="margin-top: 3px; margin-bottom: 3px">
+Bitrates:&nbsp;  
+</p>
+<p style="margin-top: 3px; margin-bottom: 3px">
+AMRWB modes:  
+</p>
+<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="363" id="table2">
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span lang="EN-US" style="color: windowtext">
+<font size="3">
+b  
+</font>
+</span>
+<span style="color: windowtext">
+<font size="3">
+itrate  
+</font>
+</span>
+<span lang="EN-US" style="color: windowtext">
+<font size="3">
+(bps)  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 102px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+bits per f  
+</font>
+</span>
+<span lang="EN-US" style="color: windowtext">
+<font size="3">
+r  
+</font>
+</span>
+<span style="color: windowtext">
+<font size="3">
+ame  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+octes per frame  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+6600  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 102px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+132  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+17  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+8850  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 102px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+177  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+23  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+12650  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 102px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+253  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+32  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+14250  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 102px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+285  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+36  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+15850  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 102px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+317  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+40  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+18250  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 102px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+365  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+46  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+19850  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 102px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+397  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+50  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+23050  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 102px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+461  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+58  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+23850  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 102px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+477  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+60  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+SID  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 102px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+35  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+5  
+</font>
+</span>
+</td>
+</tr>
+</table>
+<p style="margin-top: 3px; margin-bottom: 3px">
+16kHz mono PCM allowed only.  
+</p>
+<p style="margin-top: 3px; margin-bottom: 3px">
+AMRWB character modes (modes with fixed internal sampling frequency):  
+</p>
+<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="362" id="table3">
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 110px; height: 12.75pt; border: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="NormalArial" style="text-align: center; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span lang="EN-US">
+<font size="3">
+bitrate (bps)  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 106px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="NormalArial" style="text-align: center; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span lang="EN-US">
+<font size="3">
+bits per frame  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="NormalArial" style="text-align: center; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span lang="EN-US">
+<font size="3">
+octes per frame  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 15.75pt">
+<td nowrap valign="bottom" style="width: 110px; height: 15.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="NormalArial" style="text-align: center; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span lang="EN-US">
+<font size="3">
+13600 mono  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 106px; height: 15.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="NormalArial" style="text-align: center; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span lang="EN-US">
+<font size="3">
+272  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 104px; height: 15.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="NormalArial" style="text-align: center; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span lang="EN-US">
+<font size="3">
+34  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 15.75pt">
+<td nowrap valign="bottom" style="width: 110px; height: 15.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="NormalArial" style="text-align: center; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span lang="EN-US">
+<font size="3">
+24000 mono  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 106px; height: 15.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="NormalArial" style="text-align: center; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span lang="EN-US">
+<font size="3">
+480  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 104px; height: 15.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="NormalArial" style="text-align: center; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span lang="EN-US">
+<font size="3">
+60  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 15.75pt">
+<td nowrap valign="bottom" style="width: 110px; height: 15.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="NormalArial" style="text-align: center; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span lang="EN-US">
+<font size="3">
+18000 stereo  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 106px; height: 15.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="NormalArial" style="text-align: center; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span lang="EN-US">
+<font size="3">
+360  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 104px; height: 15.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="NormalArial" style="text-align: center; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span lang="EN-US">
+<font size="3">
+45  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 15.75pt">
+<td nowrap valign="bottom" style="width: 110px; height: 15.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="NormalArial" style="text-align: center; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span lang="EN-US">
+<font size="3">
+24000 stereo  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 106px; height: 15.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="NormalArial" style="text-align: center; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span lang="EN-US">
+<font size="3">
+480  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 104px; height: 15.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="NormalArial" style="text-align: center; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span lang="EN-US">
+<font size="3">
+60  
+</font>
+</span>
+</td>
+</tr>
+</table>
+<p style="margin-top: 3px; margin-bottom: 3px">
+8/16/24 kHz PCM applicable.  
+</p>
+<p style="margin-top: 3px; margin-bottom: 3px">
+AMRWBE mono modes (bit rates assume 25600 Hz internal sampling frequency):  
+</p>
+<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="360" id="table4">
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 107px; height: 12.75pt; border: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span lang="EN-US" style="color: windowtext">
+<font size="3">
+bitrate (bps)  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 111px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+bits per f  
+</font>
+</span>
+<span lang="EN-US" style="color: windowtext">
+<font size="3">
+r  
+</font>
+</span>
+<span style="color: windowtext">
+<font size="3">
+ame  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+octes per frame  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 107px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+10400  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 111px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+208  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+26  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 107px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+12000  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 111px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+240  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+30  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 107px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+13600  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 111px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+272  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+34  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 107px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+15200  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 111px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+304  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+38  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 107px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+16800  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 111px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+336  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+42  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 107px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+19200  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 111px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+384  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+48  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 107px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+20800  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 111px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+416  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+52  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 107px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+24000  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 111px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+480  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+60  
+</font>
+</span>
+</td>
+</tr>
+</table>
+<p style="margin-top: 3px; margin-bottom: 3px">
+Full mono and stereo sampling band applicable.  
+</p>
+<p style="margin-top: 3px; margin-bottom: 3px">
+AMRWBE stereo modes (bit rates assume 25600 Hz internal sampling frequency):  
+</p>
+<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="360" id="table5">
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span lang="EN-US" style="color: windowtext">
+<font size="3">
+bitrate (bps)  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+bits per f  
+</font>
+</span>
+<span lang="EN-US" style="color: windowtext">
+<font size="3">
+r  
+</font>
+</span>
+<span style="color: windowtext">
+<font size="3">
+ame  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+octes per frame  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+12400  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+248  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+31  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+12800  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+256  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+32  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+14000  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+280  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+35  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+14400  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+288  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+36  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+15200  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+304  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+38  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+16000  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+320  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+40  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+16400  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+328  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+41  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+17200  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+344  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+43  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+18000  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+360  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+45  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+18400  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+368  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+46  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+19200  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+384  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+48  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+20000  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+400  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+50  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+20400  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+408  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+51  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+21200  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+424  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+53  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+22400  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+448  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+56  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+23200  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+464  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+58  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+24000  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+480  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+60  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+25600  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+512  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+64  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+26000  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+520  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+65  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+26800  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+536  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+67  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+28800  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+576  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+72  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+29600  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+592  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+74  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+30000  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+600  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+75  
+</font>
+</span>
+</td>
+</tr>
+<tr style="height: 12.75pt">
+<td nowrap valign="bottom" style="width: 104px; height: 12.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+32000  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 114px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+640  
+</font>
+</span>
+</td>
+<td nowrap valign="bottom" style="width: 101px; height: 12.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0in; padding-bottom: 0in">
+<p class="MsoNormal" align="center">
+<span style="color: windowtext">
+<font size="3">
+80  
+</font>
+</span>
+</td>
+</tr>
+</table>
+<p style="margin-top: 3px; margin-bottom: 3px">
+Full stereo sampling band applicable.  
+<p style="margin-top: 3px; margin-bottom: 3px">
+For mono bitrates &quot;USC_Modes::outMode&quot; must be setup to &quot;USC_OUT_MONO&quot; and to &quot;USC_OUT_STEREO&quot; for stereo bitrates.  
+</li>
+<li>
+<p style="margin-top: 3px; margin-bottom: 3px">
+Voice Activity Detection: VAD supported  
+</li>
+<li>
+<p style="margin-top: 3px; margin-bottom: 3px">
+Packet Loss Concealment: PLC supported  
+</li>
+<li>
+<p style="margin-top: 3px; margin-bottom: 3px">
+Frame type (value): 0  
+</li>
+<li>
+<p style="margin-top: 3px; margin-bottom: 3px">
+Standards: 3GPP TS26.273, TS26.290  
+</li>
+</ul>
+<P>
+<BR>
+</P>
+
+<DIV id=IPP_Copyright>
+Copyright &copy; 2005-2009, Intel Corporation. All rights reserved.
+</DIV>
+
+</BODY>
+</HTML>

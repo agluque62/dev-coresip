@@ -1,0 +1,200 @@
+<HTML>
+<HEAD>
+<TITLE>
+Intel&reg;Integrated Performance Primitives Sample Readme  
+</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<style>
+<!-- -->
+</style>
+</HEAD>
+<BODY text=#000000 bgColor=#ffffff>
+<CENTER>
+<H1>
+<B>
+<I>
+Intel  
+<SUP>
+&reg; 
+</SUP>
+Integrated Performance Primitives  
+<BR>
+USC G729 float codec  
+</I>
+</B>
+</H1>
+</CENTER>
+<H5>
+<A href="#Overview">
+Overview  
+</A>
+<BR>
+<a href="#USC Codec description">
+USC Codec description  
+</a>
+<BR>
+&nbsp;  
+</H5>
+<H2>
+<A name=Overview>
+</A>
+Overview  
+</H2>
+The USC G729 speech codec is compliant with ITU-T G.729 and Annexes A, B, C, C+, D, E, I&nbsp; specifications for CS-ACELP codec promoted by International Telecommunication Union (  
+<a href="http://www.itu.int">
+www.itu.org  
+</a>
+) and has been implemented using the Intel  
+<sup>
+&reg; 
+</sup>
+Integrated Performance Primitives (Intel  
+<sup>
+&reg; 
+</sup>
+IPP) Speech Coding functions.  
+<font face="Times New Roman">
+The USC G729 codec  
+</font>
+supports 16bit narrowband 8000 Hz PCM signal compression and decompression with 10ms frame length at 6400, 8000 and 11800 bps producing 64, 80 or and 118 bits per frame (bpf) respectively.  
+<P>
+Additional information on this software as well as other Intel  
+<sup>
+&reg; 
+</sup>
+Software Development Products is available at  
+<A href="http://developer.intel.com/software/products/">
+http://developer.intel.com/software/products/  
+</A>
+.  
+<H2>
+<a name="USC Codec description">
+</a>
+USC Codec description  
+</H2>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+For USC Interface description refer to USC manual.&nbsp;  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+&nbsp;  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Two USC G729 floating-point codecs are supported with following parameters:  
+</p>
+<ul>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Codec names: IPP_G729A_FP  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Compression algorithm: Reduced complexity Conjugate-Structure Algebraic-Code-Excited Linear-Prediction (SC-ACELP).  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Linkage: USC_G729A_Fxns, USC_G729AFP_Fxns  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Sampling: 16bit linear 8000 Hz  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Frame: 10ms  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Bitrates: 8000 bps (voice - 80 bpf, SID - 16 bpf, Untransmitted - 0 bpf))  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Voice Activity Detection: VAD supported  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Packet Loss Concealment: PLC supported  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Frame type (value): Voice (3), SID (1),Untransmitted(0) , Bad(-1)  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Standard: ITU-T G.729 Annexes A, B  
+</p>
+</li>
+</ul>
+<FONT size=-2>
+<P>
+&nbsp;  
+</P>
+</FONT>
+<ul>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Codec names: IPP_G729I_FP  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Compression algorithm: Reduced complexity Conjugate-Structure Algebraic-Code-Excited Linear-Prediction (SC-ACELP).  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Linkage: USC_G729I_Fxns, USC_G729IFP_Fxns  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Sampling: 16bit linear 8000 Hz  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Frame: 10ms  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Bitrates: 6400 bps (64 bpf), 8000 bps (80 bpf), 11800 bps (236 bpf); SID - 16 bpf, Untransmitted - 0 bpf.  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Voice Activity Detection: VAD supported  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Packet Loss Concealment: PLC supported  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Frame types (value): Voice 6400 (2),&nbsp; Voice 8000 (3), Voice 11800 (4), SID (1), Untransmitted (0) , Bad(-1)  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Standard: ITU-T G.729, Annexes&nbsp; B, C, C+, D, E, I  
+</p>
+</li>
+</ul>
+<BR>
+
+<DIV id=IPP_Copyright>
+Copyright &copy; 2005-2009, Intel Corporation. All rights reserved.
+</DIV>
+
+</BODY>
+</HTML>

@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<VisualStudioProject
+ 	Name="speech"
+ 	Version="8.00"
+ 	ProjectGUID="{56C93130-58B6-5333-0220-6211121144D5}"
+ 	ProjectType="Visual C++"
+ 	>
+<Platforms>
+<Platform Name="Win32" />
+<Platform Name="x64" />
+</Platforms>
+<ToolFiles />
+<Configurations>
+<Configuration
+ 	Name="Debug|Win32"
+ 	ConfigurationType="4"
+ 	OutputDirectory="../../_bin/Win32/Debug"
+ 	IntermediateDirectory="../../_bin/Win32/Debug/speech_obj"
+ 	CharacterSet="2"
+ 	>
+<Tool Name="VCPreBuildEventTool" />
+<Tool Name="VCCustomBuildTool" />
+<Tool Name="VCXMLDataGeneratorTool" />
+<Tool Name="VCWebServiceProxyGeneratorTool" />
+<Tool Name="VCMIDLTool" />
+<Tool Name="VCManagedResourceCompilerTool" />
+<Tool Name="VCPreLinkEventTool" />
+<Tool Name="VCPreLinkEventTool" />
+<Tool Name="VCALinkTool" />
+<Tool Name="VCAMenifestTool" />
+<Tool Name="VCXDCMakeTool" />
+<Tool Name="VCBscMakeTool" />
+<Tool Name="VCFxCopTool" />
+<Tool Name="VCAppVerifierTool" />
+<Tool Name="VCWebDeploymentTool" />
+<Tool Name="VCPostBuildEventTool" />
+<Tool
+ 	Name="VCResourceCompilerTool"
+ 	AdditionalIncludeDirectories="g729i/include;g722.1/include;g729fp/include;g728/include;gsmfr/include;g729.1/include;amrwb/include;gsmamr/include;g711/include;g723.1/include;vad_sr/include;amrwbe/include;g722/include;ec/include;vad/include;nr/include;common/include;../../."
+ 	PreprocessorDefinitions="_DEBUG;WIN32;_WIN32;_WIN32_WINNT=0x500;_WINDOWS;STRICT;CLIPPING_DENORMAL_MODE;_USC_ALL"
+ 	></Tool>
+<Tool
+ 	Name="VCCLCompilerTool"
+ 	UsePrecompiledHeader="0"
+ 	AdditionalOptions="/EHsc /GS /nologo /c"
+ 	Optimization="0"
+ 	EnableEnhancedInstructionSet="0"
+ 	Detect64BitPortabilityProblems="false"
+ 	StructMemberAlignment="5"
+ 	AdditionalIncludeDirectories="../../core/vm_plus/include;vad_sr/include;../../io/jitter_buffers/include;$(IPPROOT)/include;../../core/vm/include/sys;g723.1/include;../../core/usc/include;../../io/audio_renders/include;amrwbe/include;gsmamr/include;../../application/usc_tones/include;../../core/vm/include;vad/include;g729fp/include;g722.1/include;amrwb/include;../../core/umc/include;_rtp/include;gsmfr/include;g728/include;common/include;../../io/media_buffers/include;g711/include;nr/include;g729.1/include;g729i/include;g722/include;ec/include"
+ 	PreprocessorDefinitions="_DEBUG;WIN32;_WIN32;_WIN32_WINNT=0x500;_WINDOWS;STRICT;CLIPPING_DENORMAL_MODE;_USC_ALL"
+ 	MinimalRebuild="false"
+ 	WarningLevel="0"
+ 	BasicRuntimeChecks="3"
+ 	OpenMP="false"
+ 	DebugInformationFormat="3"
+ 	RuntimeLibrary="1"
+ 	></Tool>
+<Tool
+ 	Name="VCLibrarianTool"
+ 	SuppressStartupBanner="true"
+ 	OutputFile="$(OutDir)/$(ProjectName).lib"
+ 	></Tool>
+</Configuration>
+<Configuration
+ 	Name="Debug|x64"
+ 	IntermediateDirectory="../../_bin/x64/Debug/speech_obj"
+ 	CharacterSet="2"
+ 	ConfigurationType="4"
+ 	OutputDirectory="../../_bin/x64/Debug"
+ 	>
+<Tool Name="VCPreBuildEventTool" />
+<Tool Name="VCCustomBuildTool" />
+<Tool Name="VCXMLDataGeneratorTool" />
+<Tool Name="VCWebServiceProxyGeneratorTool" />
+<Tool Name="VCMIDLTool" />
+<Tool Name="VCManagedResourceCompilerTool" />
+<Tool Name="VCPreLinkEventTool" />
+<Tool Name="VCPreLinkEventTool" />
+<Tool Name="VCALinkTool" />
+<Tool Name="VCAMenifestTool" />
+<Tool Name="VCXDCMakeTool" />
+<Tool Name="VCBscMakeTool" />
+<Tool Name="VCFxCopTool" />
+<Tool Name="VCAppVerifierTool" />
+<Tool Name="VCWebDeploymentTool" />
+<Tool Name="VCPostBuildEventTool" />
+<Tool
+ 	Name="VCResourceCompilerTool"
+ 	AdditionalIncludeDirectories="g729i/include;g722.1/include;g729fp/include;g728/include;gsmfr/include;g729.1/include;amrwb/include;gsmamr/include;g711/include;g723.1/include;vad_sr/include;amrwbe/include;g722/include;ec/include;vad/include;nr/include;common/include;../../."
+ 	PreprocessorDefinitions="_DEBUG;WIN64;_WIN64;_AMD64_;_WINDOWS;STRICT;CLIPPING_DENORMAL_MODE;_USC_ALL"
+ 	></Tool>
+<Tool
+ 	Name="VCCLCompilerTool"
+ 	UsePrecompiledHeader="0"
+ 	AdditionalOptions="/EHsc /GS /nologo /c"
+ 	Optimization="0"
+ 	EnableEnhancedInstructionSet="0"
+ 	Detect64BitPortabilityProblems="false"
+ 	StructMemberAlignment="5"
+ 	AdditionalIncludeDirectories="../../core/vm_plus/include;vad_sr/include;../../io/jitter_buffers/include;$(IPPROOT)/include;../../core/vm/include/sys;g723.1/include;../../core/usc/include;../../io/audio_renders/include;amrwbe/include;gsmamr/include;../../application/usc_tones/include;../../core/vm/include;vad/include;g729fp/include;g722.1/include;_rtp/include;../../core/umc/include;amrwb/include;gsmfr/include;common/include;g728/include;../../io/media_buffers/include;nr/include;g711/include;g729.1/include;g722/include;g729i/include;ec/include"
+ 	PreprocessorDefinitions="_DEBUG;WIN64;_WIN64;_AMD64_;_WINDOWS;STRICT;CLIPPING_DENORMAL_MODE;_USC_ALL"
+ 	MinimalRebuild="false"
+ 	WarningLevel="0"
+ 	BasicRuntimeChecks="3"
+ 	OpenMP="false"
+ 	DebugInformationFormat="3"
+ 	RuntimeLibrary="1"
+ 	></Tool>
+<Tool
+ 	Name="VCLibrarianTool"
+ 	SuppressStartupBanner="true"
+ 	OutputFile="$(OutDir)/$(ProjectName).lib"
+ 	></Tool>
+</Configuration>
+<Configuration
+ 	Name="Release|Win32"
+ 	IntermediateDirectory="../../_bin/Win32/Release/speech_obj"
+ 	CharacterSet="2"
+ 	ConfigurationType="4"
+ 	OutputDirectory="../../_bin/Win32/Release"
+ 	>
+<Tool Name="VCPreBuildEventTool" />
+<Tool Name="VCCustomBuildTool" />
+<Tool Name="VCXMLDataGeneratorTool" />
+<Tool Name="VCWebServiceProxyGeneratorTool" />
+<Tool Name="VCMIDLTool" />
+<Tool Name="VCManagedResourceCompilerTool" />
+<Tool Name="VCPreLinkEventTool" />
+<Tool Name="VCPreLinkEventTool" />
+<Tool Name="VCALinkTool" />
+<Tool Name="VCAMenifestTool" />
+<Tool Name="VCXDCMakeTool" />
+<Tool Name="VCBscMakeTool" />
+<Tool Name="VCFxCopTool" />
+<Tool Name="VCAppVerifierTool" />
+<Tool Name="VCWebDeploymentTool" />
+<Tool Name="VCPostBuildEventTool" />
+<Tool
+ 	Name="VCResourceCompilerTool"
+ 	AdditionalIncludeDirectories="g729i/include;g722.1/include;g729fp/include;g728/include;gsmfr/include;g729.1/include;amrwb/include;gsmamr/include;g711/include;g723.1/include;vad_sr/include;amrwbe/include;g722/include;ec/include;vad/include;nr/include;common/include;../../."
+ 	PreprocessorDefinitions="NDEBUG;WIN32;_WIN32;_WIN32_WINNT=0x500;_WINDOWS;STRICT;CLIPPING_DENORMAL_MODE;_USC_ALL"
+ 	></Tool>
+<Tool
+ 	Name="VCCLCompilerTool"
+ 	AdditionalOptions="/EHsc /GS /nologo /c"
+ 	StructMemberAlignment="5"
+ 	PreprocessorDefinitions="NDEBUG;WIN32;_WIN32;_WIN32_WINNT=0x500;_WINDOWS;STRICT;CLIPPING_DENORMAL_MODE;_USC_ALL"
+ 	InlineFunctionExpansion="2"
+ 	BasicRuntimeChecks="0"
+ 	OpenMP="false"
+ 	RuntimeLibrary="0"
+ 	Optimization="3"
+ 	UsePrecompiledHeader="0"
+ 	EnableIntrinsicFunctions="true"
+ 	EnableEnhancedInstructionSet="2"
+ 	Detect64BitPortabilityProblems="false"
+ 	OmitFramePointers="true"
+ 	AdditionalIncludeDirectories="../../core/vm_plus/include;vad_sr/include;../../io/jitter_buffers/include;$(IPPROOT)/include;../../core/vm/include/sys;g723.1/include;../../core/usc/include;../../io/audio_renders/include;amrwbe/include;gsmamr/include;../../application/usc_tones/include;../../core/vm/include;vad/include;g729fp/include;g722.1/include;_rtp/include;../../core/umc/include;amrwb/include;gsmfr/include;common/include;g728/include;../../io/media_buffers/include;nr/include;g711/include;g729.1/include;g722/include;g729i/include;ec/include"
+ 	MinimalRebuild="false"
+ 	WarningLevel="0"
+ 	DebugInformationFormat="0"
+ 	></Tool>
+<Tool
+ 	Name="VCLibrarianTool"
+ 	OutputFile="$(OutDir)/$(ProjectName).lib"
+ 	SuppressStartupBanner="true"
+ 	></Tool>
+</Configuration>
+<Configuration
+ 	Name="Release|x64"
+ 	CharacterSet="2"
+ 	ConfigurationType="4"
+ 	IntermediateDirectory="../../_bin/x64/Release/speech_obj"
+ 	OutputDirectory="../../_bin/x64/Release"
+ 	>
+<Tool Name="VCPreBuildEventTool" />
+<Tool Name="VCCustomBuildTool" />
+<Tool Name="VCXMLDataGeneratorTool" />
+<Tool Name="VCWebServiceProxyGeneratorTool" />
+<Tool Name="VCMIDLTool" />
+<Tool Name="VCManagedResourceCompilerTool" />
+<Tool Name="VCPreLinkEventTool" />
+<Tool Name="VCPreLinkEventTool" />
+<Tool Name="VCALinkTool" />
+<Tool Name="VCAMenifestTool" />
+<Tool Name="VCXDCMakeTool" />
+<Tool Name="VCBscMakeTool" />
+<Tool Name="VCFxCopTool" />
+<Tool Name="VCAppVerifierTool" />
+<Tool Name="VCWebDeploymentTool" />
+<Tool Name="VCPostBuildEventTool" />
+<Tool
+ 	Name="VCResourceCompilerTool"
+ 	PreprocessorDefinitions="NDEBUG;WIN64;_WIN64;_AMD64_;_WINDOWS;STRICT;CLIPPING_DENORMAL_MODE;_USC_ALL"
+ 	AdditionalIncludeDirectories="g729i/include;g722.1/include;g729fp/include;g728/include;gsmfr/include;g729.1/include;amrwb/include;gsmamr/include;g711/include;g723.1/include;vad_sr/include;amrwbe/include;g722/include;ec/include;vad/include;nr/include;common/include;../../."
+ 	></Tool>
+<Tool
+ 	Name="VCCLCompilerTool"
+ 	AdditionalOptions="/EHsc /GS /nologo /c"
+ 	StructMemberAlignment="5"
+ 	PreprocessorDefinitions="NDEBUG;WIN64;_WIN64;_AMD64_;_WINDOWS;STRICT;CLIPPING_DENORMAL_MODE;_USC_ALL"
+ 	InlineFunctionExpansion="2"
+ 	BasicRuntimeChecks="0"
+ 	OpenMP="false"
+ 	RuntimeLibrary="0"
+ 	UsePrecompiledHeader="0"
+ 	Optimization="3"
+ 	EnableIntrinsicFunctions="true"
+ 	EnableEnhancedInstructionSet="0"
+ 	Detect64BitPortabilityProblems="false"
+ 	AdditionalIncludeDirectories="../../core/vm_plus/include;vad_sr/include;../../io/jitter_buffers/include;$(IPPROOT)/include;../../core/vm/include/sys;g723.1/include;../../core/usc/include;../../io/audio_renders/include;amrwbe/include;gsmamr/include;../../application/usc_tones/include;../../core/vm/include;vad/include;g729fp/include;g722.1/include;_rtp/include;../../core/umc/include;amrwb/include;gsmfr/include;common/include;g728/include;../../io/media_buffers/include;nr/include;g711/include;g729.1/include;g722/include;g729i/include;ec/include"
+ 	OmitFramePointers="true"
+ 	MinimalRebuild="false"
+ 	WarningLevel="0"
+ 	DebugInformationFormat="0"
+ 	></Tool>
+<Tool
+ 	Name="VCLibrarianTool"
+ 	OutputFile="$(OutDir)/$(ProjectName).lib"
+ 	SuppressStartupBanner="true"
+ 	></Tool>
+</Configuration>
+</Configurations>
+<References />
+<Files>
+<Filter
+ 	Name="Source Files"
+ 	Filter="cpp;c;cc;cxx;def;odl;idl;hpj;asm;asmx"
+ 	>
+<File RelativePath="alc\src\uscalc.c" />
+<File RelativePath="amrwb\src\decamrwb.c" />
+<File RelativePath="amrwb\src\dtxamrwb.c" />
+<File RelativePath="amrwb\src\encamrwb.c" />
+<File RelativePath="amrwb\src\ownamrwb.c" />
+<File RelativePath="amrwb\src\tabamrwb.c" />
+<File RelativePath="amrwb\src\uscamrwb.c" />
+<File RelativePath="amrwb\src\utilamrwb.c" />
+<File RelativePath="amrwbe\src\decamrwbe.c" />
+<File RelativePath="amrwbe\src\encamrwbe.c" />
+<File RelativePath="amrwbe\src\initwbe.c" />
+<File RelativePath="amrwbe\src\tabamrwbe.c" />
+<File RelativePath="amrwbe\src\uscamrwbe.c" />
+<File RelativePath="amrwbe\src\utildecwbe.c" />
+<File RelativePath="amrwbe\src\utilencwbe.c" />
+<File RelativePath="amrwbe\src\utilswbe.c" />
+<File RelativePath="common\src\aec_db_tbl.c" />
+<File RelativePath="common\src\aux_tbls.c" />
+<File RelativePath="ec\src\ah.c" />
+<File RelativePath="ec\src\ec_fb.c" />
+<File RelativePath="ec\src\ec_sb.c" />
+<File RelativePath="ec\src\ec_sbf.c" />
+<File RelativePath="ec\src\ec_td.c" />
+<File RelativePath="ec\src\freqdist.c" />
+<File RelativePath="ec\src\nlp.c" />
+<File RelativePath="ec\src\nr_sbf.c" />
+<File RelativePath="ec\src\uscec.c" />
+<File RelativePath="g711\src\decg711.c" />
+<File RelativePath="g711\src\encg711.c" />
+<File RelativePath="g711\src\plcg711.c" />
+<File RelativePath="g711\src\uscg711.c" />
+<File RelativePath="g722\src\decg722sb.c" />
+<File RelativePath="g722\src\encg722sb.c" />
+<File RelativePath="g722\src\owng722sb.c" />
+<File RelativePath="g722\src\uscg722sb.c" />
+<File RelativePath="g722.1\src\decg722.c" />
+<File RelativePath="g722.1\src\encg722.c" />
+<File RelativePath="g722.1\src\g722api.c" />
+<File RelativePath="g722.1\src\owng722.c" />
+<File RelativePath="g722.1\src\uscg722.c" />
+<File RelativePath="g723.1\src\decg723.c" />
+<File RelativePath="g723.1\src\encg723.c" />
+<File RelativePath="g723.1\src\owng723.c" />
+<File RelativePath="g723.1\src\uscg723.c" />
+<File RelativePath="g726\src\uscg726.c" />
+<File RelativePath="g728\src\adapters.c" />
+<File RelativePath="g728\src\consealg728.c" />
+<File RelativePath="g728\src\g728api.c" />
+<File RelativePath="g728\src\g728j.c" />
+<File RelativePath="g728\src\g728tables.c" />
+<File RelativePath="g728\src\owng728.c" />
+<File RelativePath="g728\src\pitchg728.c" />
+<File RelativePath="g728\src\pstg728.c" />
+<File RelativePath="g728\src\uscg728.c" />
+<File RelativePath="g728\src\vq.c" />
+<File RelativePath="g729.1\src\decg7291.c" />
+<File RelativePath="g729.1\src\encg7291.c" />
+<File RelativePath="g729.1\src\owng7291.c" />
+<File RelativePath="g729.1\src\tabg7291.c" />
+<File RelativePath="g729.1\src\uscg7291.c" />
+<File RelativePath="g729.1\src\utilfec.c" />
+<File RelativePath="g729.1\src\utilg7291.c" />
+<File RelativePath="g729.1\src\utilsid.c" />
+<File RelativePath="g729fp\src\decg729fp.c" />
+<File RelativePath="g729fp\src\encg729fp.c" />
+<File RelativePath="g729fp\src\owng729fp.c" />
+<File RelativePath="g729fp\src\usc729fp.c" />
+<File RelativePath="g729i\src\decg729.c" />
+<File RelativePath="g729i\src\encg729.c" />
+<File RelativePath="g729i\src\owng729.c" />
+<File RelativePath="g729i\src\uscg729i.c" />
+<File RelativePath="gsmamr\src\bitgsmamr.c" />
+<File RelativePath="gsmamr\src\decgsmamr.c" />
+<File RelativePath="gsmamr\src\dtxgsmamr.c" />
+<File RelativePath="gsmamr\src\encgsmamr.c" />
+<File RelativePath="gsmamr\src\gain_util.c" />
+<File RelativePath="gsmamr\src\tabgsmamr.c" />
+<File RelativePath="gsmamr\src\uscgsmamr.c" />
+<File RelativePath="gsmamr\src\utilgsmamr.c" />
+<File RelativePath="gsmfr\src\decgsmfr.c" />
+<File RelativePath="gsmfr\src\encgsmfr.c" />
+<File RelativePath="gsmfr\src\owngsmfr.c" />
+<File RelativePath="gsmfr\src\uscgsmfr.c" />
+<File RelativePath="nr\src\nr.c" />
+<File RelativePath="nr\src\uscnr.c" />
+<File RelativePath="nr\src\usc_ecnr.c" />
+<File RelativePath="nr\src\usc_msrta_nr.c" />
+<File RelativePath="td\src\usc_ansam.c" />
+<File RelativePath="td\src\usc_ans_tones.c" />
+<File RelativePath="td\src\usc_dtmf.c" />
+<File RelativePath="vad\src\uscvadamrwb.c" />
+<File RelativePath="vad\src\uscvadg723.c" />
+<File RelativePath="vad\src\uscvadg729fp.c" />
+<File RelativePath="vad\src\uscvadg729i.c" />
+<File RelativePath="vad\src\vadg723.c" />
+<File RelativePath="vad\src\vadg729.c" />
+<File RelativePath="vad\src\vadg729fp.c" />
+<File RelativePath="vad_sr\src\uscvadsr.c" />
+<File RelativePath="vad_sr\src\vad_energysr.c" />
+<File RelativePath="vad_sr\src\vad_persr.c" />
+<File RelativePath="vad_sr\src\vad_smsr.c" />
+</Filter>
+<Filter
+ 	Name="Header Files"
+ 	Filter="h;hpp;hxx;hm;inl;xsd"
+ 	>
+<File RelativePath="amrwb\include\amrwbapi.h" />
+<File RelativePath="amrwb\include\amrwbusc.h" />
+<File RelativePath="amrwb\include\amrwb_types.h" />
+<File RelativePath="amrwb\include\ownamrwb.h" />
+<File RelativePath="amrwbe\include\apiamrwbe.h" />
+<File RelativePath="amrwbe\include\ownamrwbe.h" />
+<File RelativePath="amrwbe\include\typesamrwbe.h" />
+<File RelativePath="amrwbe\include\uscamrwbe.h" />
+<File RelativePath="common\include\aux_fnxs.h" />
+<File RelativePath="ec\include\ah_api.h" />
+<File RelativePath="ec\include\ecusc.h" />
+<File RelativePath="ec\include\ec_api.h" />
+<File RelativePath="ec\include\ec_td.h" />
+<File RelativePath="ec\include\nlp_api.h" />
+<File RelativePath="ec\include\nr_sbf.h" />
+<File RelativePath="ec\include\ownah.h" />
+<File RelativePath="ec\include\ownec.h" />
+<File RelativePath="g711\include\g711api.h" />
+<File RelativePath="g711\include\owng711.h" />
+<File RelativePath="g722\include\g722sb.h" />
+<File RelativePath="g722\include\g722sbapi.h" />
+<File RelativePath="g722\include\owng722sb.h" />
+<File RelativePath="g722.1\include\g722.h" />
+<File RelativePath="g722.1\include\g722api.h" />
+<File RelativePath="g722.1\include\owng722.h" />
+<File RelativePath="g723.1\include\g723api.h" />
+<File RelativePath="g723.1\include\g723ipp.h" />
+<File RelativePath="g723.1\include\owng723.h" />
+<File RelativePath="g728\include\g728.h" />
+<File RelativePath="g728\include\g728api.h" />
+<File RelativePath="g728\include\g728tables.h" />
+<File RelativePath="g728\include\owng728.h" />
+<File RelativePath="g729.1\include\g7291api.h" />
+<File RelativePath="g729.1\include\g7291usc.h" />
+<File RelativePath="g729.1\include\owng7291.h" />
+<File RelativePath="g729fp\include\g729fpapi.h" />
+<File RelativePath="g729fp\include\owng729fp.h" />
+<File RelativePath="g729i\include\g729api.h" />
+<File RelativePath="g729i\include\g729usc.h" />
+<File RelativePath="g729i\include\owng729.h" />
+<File RelativePath="gsmamr\include\gsmamr.h" />
+<File RelativePath="gsmamr\include\gsmamrapi.h" />
+<File RelativePath="gsmamr\include\gsmamrusc.h" />
+<File RelativePath="gsmamr\include\gsmamr_types.h" />
+<File RelativePath="gsmamr\include\owngsmamr.h" />
+<File RelativePath="gsmfr\include\gsmfrapi.h" />
+<File RelativePath="gsmfr\include\gsmfr_types.h" />
+<File RelativePath="gsmfr\include\owngsmfr.h" />
+<File RelativePath="nr\include\nr.h" />
+<File RelativePath="vad\include\vadg723.h" />
+<File RelativePath="vad\include\vadg729.h" />
+<File RelativePath="vad\include\vadg729fp.h" />
+<File RelativePath="vad_sr\include\vadcommon.h" />
+<File RelativePath="vad_sr\include\vadfiltsr.h" />
+<File RelativePath="vad_sr\include\vad_uscsr.h" />
+</Filter>
+</Files>
+<Globals />
+</VisualStudioProject>

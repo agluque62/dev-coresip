@@ -1,0 +1,169 @@
+<HTML>
+<HEAD>
+<TITLE>
+Intel&reg;Integrated Performance Primitives Sample Readme  
+</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<style>
+<!-- -->
+</style>
+</HEAD>
+<BODY text=#000000 bgColor=#ffffff>
+<CENTER>
+<H1>
+<B>
+<I>
+Intel  
+<SUP>
+&reg; 
+</SUP>
+Integrated Performance Primitives  
+<BR>
+USC G726 codec  
+</I>
+</B>
+</H1>
+</CENTER>
+<H5>
+<A href="#Overview">
+Overview  
+</A>
+<BR>
+<a href="#USC Codec description">
+USC Codec description  
+</a>
+<BR>
+&nbsp;  
+</H5>
+<H2>
+<A name=Overview>
+</A>
+Overview  
+</H2>
+The USC G726 speech codec is compliant with ITU-T G.726 and G.726 Annex A specifications for Adaptive Differential PCM promoted by International Telecommunication Union (  
+<a href="http://www.itu.int">
+www.itu.org  
+</a>
+) and has been implemented using the Intel  
+<sup>
+&reg; 
+</sup>
+Integrated Performance Primitives (Intel  
+<sup>
+&reg; 
+</sup>
+IPP) Speech Coding functions.  
+<font face="Times New Roman">
+The USC G726 codec  
+</font>
+supports 16bit or 8bit narrowband 8000 Hz PCM signal compression and decompression with 10ms frame length at 16, 24, 32 and 40 kbps producing 160, 240, 320 or 400 bits per frame (bpf) respectively.  
+<P>
+Additional information on this software as well as other Intel  
+<sup>
+&reg; 
+</sup>
+Software Development Products is available at  
+<A href="http://developer.intel.com/software/products/">
+http://developer.intel.com/software/products/  
+</A>
+.  
+<H2>
+<a name="USC Codec description">
+</a>
+USC Codec description  
+</H2>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+For USC Interface description refer to USC manual.&nbsp;  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+&nbsp;  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+USC G726 codec parameters:  
+</p>
+<ul>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Codec name: IPP_G726  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Compression algorithm: Adaptive differential pulse code modulation (ADPCM)  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Linkage: USC_G726_Fxns  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Sampling: 16bit linear or 8bit compounded A-law or Mu-law 8000 Hz PCM  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Frame sizes: 10ms (160 bytes)  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Bitstream frame sizes: 20, 30, 40 or 50 for 16, 24, 32 or 40 kbps respectively&nbsp;&nbsp;  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Bit rates supported: 16, 24, 32 or 40 kbps  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Voice Activity Detection: VAD not supported  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Packet Loss Concealment: PLC not supported  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Frame type (value): Speech (0)  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Standard: ITU-T G.726, G.726 Annex A  
+</p>
+</li>
+</ul>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Important note:  
+</p>
+<ul>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+As it is stated in ITU-T G.726A &quot;ANNEX A: EXTENSIONS OF RECOMMENDATION G.726 FOR USE WITH UNIFORM-QUANTIZED INPUT AND OUTPUT&quot;:  
+<br>
+&quot;This annex defines a 14-bit uniform-quantized interface for Recommendation&nbsp;G.726. Use with other data widths requires scaling the data such that the most significant bit of the 14-bit uniform PCM corresponds to the most significant bit of the target data width. For example, a 13-bit input value must be left shifted by one bit to provide the input. Likewise, the output value, must be right shifted by one bit to provide a 13-bit output.&quot;  
+<br>
+<br>
+The USC G726 encode shifts right 16 bit linear PCM input by two bits so as 14 most significant bits are compressed. The USC G726 decode decompresses into 14bit linear PCM. Thus, USC G726 codec de-amplifies input 16bit PCM to 14bit PCM. To restore original input left shift by two bits is required (amplification by about 6dB).&nbsp;  
+<br>
+</p>
+</li>
+</ul>
+<FONT size=-2>
+<P>
+Important note  
+</P>
+<BR>
+</FONT>
+
+<DIV id=IPP_Copyright>
+Copyright &copy; 2005-2009, Intel Corporation. All rights reserved.
+</DIV>
+
+</BODY>
+</HTML>

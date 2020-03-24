@@ -1,0 +1,261 @@
+<html>
+
+<head>
+    <title>
+    Intel&reg; IPP Samples -
+    USC Noise Reduction Sample (NR) for Windows*
+    </title>
+</head>
+
+<body>
+
+
+<h1 align="center">
+    Intel<sup>&reg;</sup> Integrated Performance Primitives
+    <br>
+    USC Noise Reduction Sample (NR) for Windows*
+</h1>
+
+<p>
+<b>
+<a href="#IPP_SAMPLES__Disclaimer">                             Disclaimer                             </a><br />
+<a href="#IPP_SAMPLES__License_Definitions">                    License Definitions                    </a><br />
+<a href="#IPP_SAMPLES__Overview">                               Overview                               </a><br />
+<a href="#IPP_SAMPLES__How_to_Build_Source_Code">               How to Build Source Code               </a><br />
+<a href="#IPP_SAMPLES__Running_the_Sample">                     Running the Sample                     </a><br />
+</b>
+</p>
+
+
+<h2>
+<a name=IPP_SAMPLES__Disclaimer>
+Disclaimer</a>
+</h2>
+
+<p class=MsoNormal>
+<span style='font-size:10.0pt;color:windowtext'>
+INFORMATION IN THIS DOCUMENT IS PROVIDED IN CONNECTION WITH INTEL  
+<sup>
+&reg; 
+</sup>
+PRODUCTS. NO LICENSE, EXPRESS OR IMPLIED, BY ESTOPPEL OR OTHERWISE, TO ANY INTELLECTUAL PROPERTY RIGHTS IS GRANTED BY THIS DOCUMENT. EXCEPT AS PROVIDED IN INTEL'S TERMS AND CONDITIONS OF SALE FOR SUCH PRODUCTS, INTEL ASSUMES NO LIABILITY WHATSOEVER, AND INTEL DISCLAIMS ANY EXPRESS OR IMPLIED WARRANTY, RELATING TO SALE AND/OR USE OF INTEL PRODUCTS INCLUDING LIABILITY OR WARRANTIES RELATING TO FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR INFRINGEMENT OF ANY PATENT, COPYRIGHT OR OTHER INTELLECTUAL PROPERTY RIGHT.  
+</span>
+</p>
+<p>
+Intel products are not intended for use in medical, life saving, life sustaining, critical control or safety systems, or in nuclear facility applications. Intel may make changes to specifications and product descriptions at anytime, without notice.  
+</p>
+
+
+<h2>
+<a name="IPP_SAMPLES__License_Definitions">
+License Definitions</a>
+</h2>
+
+<p>
+By downloading and installing this sample, you hereby agree that the accompanying Materials are being provided to you under the terms and conditions of the End User License Agreement for the Intel  
+<sup>
+&reg; 
+</sup>
+Integrated Performance Primitives (Intel  
+<sup>
+&reg; 
+</sup>
+IPP) product previously accepted by you. Please refer to the file  
+<b>
+ippEULA.rtf or ippEULA.txt  
+</b>
+located in the root directory of your Intel  
+<sup>
+&reg; 
+</sup>
+IPP product installation for more information.&nbsp;  
+</p>
+<p>
+The G.723.1, G.729 and AMRWB are international standards promoted by ITU (  
+<a href="http://www.itu.int">
+http://www.itu.int  
+</a>
+) and 3GPP ( <a href="http://www.3gpp.org/">http://www.3gpp.org </a>). Implementations of these standards, or the standard enabled platforms may require licenses from various entities, including Intel Corporation.  
+</p>
+
+
+<h2>
+<a name=IPP_SAMPLES__Overview>
+Overview</a>
+</h2>
+
+<p class=MsoNormal>
+<span style='color:windowtext'>
+The USC Noise reduction sample is a command line based application. It supports two components: Noise Reduction and Voice Acticity Detection.  
+</span>
+</p>
+<p class=MsoNormal>
+<span style='color:windowtext'>
+The Noise reduction sample&#8217;s component processes input PCM file narrow band 16bit 8000 Hz and creates output PCM file narrow band 16bit 8000 Hz.  
+</span>
+</p>
+<p class=MsoNormal>
+<span style='color:windowtext'>
+The VAD detection sample&#8217;s component processes input PCM file narrow band 16bit 8000 Hz or wide band  
+</span>
+<span style='color:windowtext'>
+16bit 16000 Hz  
+</span>
+<span style='color:windowtext'>
+and creates output PCM file narrow band 16bit 8000 Hz or  
+</span>
+<span style='color:windowtext'>
+wide band 16bit 16000 Hz  
+</span>
+<span style='color:windowtext'>
+respectively.  
+Various VAD algorithms are supported including G.723, G.729, AMRWB and IPP VAD 
+algorithm which originally was released in IPP speech-recognition  
+</span>audio-processing<span style='color:windowtext'>
+VAD sample.</span></p>
+<p>
+Additional information on this software as well as other Intel  
+<sup>
+&reg; 
+</sup>
+Software Development Products is available at  
+<a href="http://developer.intel.com/software/products/">
+<u>
+http://developer.intel.com/software/products/  
+</u>
+</a>
+.  
+</p>
+
+
+<h2>
+<a name="IPP_SAMPLES__How_to_Build_Source_Code">
+How to Build Source Code</a>
+</h2>
+
+<h3>
+Build target by Microsoft Visual Studio
+</h3>
+<ul>
+    <li>Set system environment variable <tt><b>IPPROOT</b></tt></li>
+    <li>Open solution/project file in related Visual Studio</li>
+    <li>Select configuration/platform you need</li>
+    <li>Build all projects in Visual Studio</li>
+</ul>
+
+
+<h2>
+<a name="IPP_SAMPLES__Running_the_Sample">
+Running the Sample</a>
+</h2>
+
+<p>
+For information on building the sample, see the readme file in the ipp_samples\speech-codecs directory.  
+</p>
+<p>
+In order to run the executable created by this sample, the Intel&reg;IPP DLLs must be on the system's path. DLLs are located in the bin subdirectory of the root directory of the Intel&reg;IPP installation (IPPROOT). This can be done by setting the PATH environment variable manually or invoking the batch file: &quot;%IPPROOT%\tools\env\ippenv.bat&quot; from the Intel&reg;IPP installation.  
+</p>
+<ul type=disc>
+<li class=MsoNormal>
+To run the USC noise reduction sample type:&nbsp;  
+</li>
+</ul>
+<p>
+<b>
+usc_nr.exe [options] &lt;inPCMFile&gt; &lt;outPCMFile&gt;&nbsp;  
+</b>
+</p>
+<p>
+The option list:&nbsp;  
+</p>
+<div>
+<p>
+<b>
+-alg  
+</b>
+IPP_NR_EPHM|IPP_NR_EC|IPP_VADG723|IPP_VADG729_FP|IPP_VADG729|IPP_VAD|IPP_VADAMRWBE - filter algorithm name.  
+</p>
+<blockquote>
+<p>
+IPP_NR_EPHM - Ehprame-Malah based Noise Reduction algorithm.  
+</p>
+<p>
+IPP_NR_EC - IPP based Noise Reduction algorithm.  
+</p>
+<p>
+IPP_NR_RTA_FP - Microsoft RT Audio Noise-Suppressor algorithm.  
+</p>
+<p>
+IPP_VADG723 - ITU G.723.1 VAD algorithm.  
+</p>
+<p>
+IPP_VADG729_FP - ITU G.729 floating-point VAD algorithm.  
+</p>
+<p>
+IPP_VADG729 - ITU G.729 VAD algorithm.  
+</p>
+<p>
+IPP_VAD - IPP based VAD algorithm.  
+</p>
+<p>IPP_VADAMRWBE - 3GPP AMR WB&nbsp; VAD algorithm. </p>
+</blockquote>
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;margin-left: 0in'>
+<b>
+-f&lt;freq&gt;&nbsp;  
+</b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sample frequency in Hertz. 16000 for IPP_VAD algorithm, 8000 for others.  
+</p>
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;margin-left: 0in'>
+<b>
+-n&nbsp;&nbsp;  
+</b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; output additional information&nbsp; (optional).  
+</p>
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;margin-left: 0in'>
+<b>
+-list&nbsp;&nbsp;  
+</b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enumerate linked USC signal filter algorithms and exit&nbsp; (optional).  
+</p>
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;margin-left: 0in'>
+&nbsp;  
+<b>
+-o &lt;logFile&gt;  
+</b>
+&nbsp;&nbsp;&nbsp;&nbsp; write to &lt;logFile&gt; file log information (optional).  
+<br>
+<b>
+&lt;inPCMFile&gt;  
+</b>
+- input audio PCM file 8000 Hz (IPP_NR_EPHM, IPP_NR_EC, IPP_NR_RTA_FP, IPP_VADG723, IPP_VADG729_FP, IPP_VADG729 algorithms) or 16000 Hz (IPP_VAD 
+and IPP_VADAMRWBE algorithms) or 22050 Hz and 32000 Hz ( IPP_NR_RTA_FP).  
+</p>
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;margin-left: 0in'>
+<b>
+&lt;outPCMFile&gt;  
+</b>
+- output audio PCM file 8000 Hz (IPP_NR_EPHM, IPP_NR_EC, IPP_NR_RTA_FP, IPP_VADG723, IPP_VADG729_FP, IPP_VADG729 algorithms) or 16000 Hz ( 
+IPP_NR_RTA_FP, IPP_VAD 
+and IPP_VADAMRWBE algorithms) or 22050 and 32000 Hz ( IPP_NR_RTA_FP).  
+</p>
+<p>
+<span style='font-size:7.5pt'>
+Intel, the Intel logo, Intel SpeedStep, Intel NetBurst, Intel NetStructure, MMX, i386, i486, Intel386, Intel486, Intel740, IntelDX2, IntelDX4, IntelSX2,Celeron, Intel Centrino, Intel Xeon, Intel XScale, Itanium, Pentium, Pentium II Xeon, Pentium III Xeon, Pentium M, and VTune are trademarks or registered trademarks of Intel Corporation or its subsidiaries in the United States and other countries.  
+</span>
+</p>
+</div>
+<p>
+<span style='font-size:7.5pt'>
+<br>
+* Other names and brands may be claimed as the property of others.  
+<br>
+<br>
+</span>
+</p>
+
+<DIV id=IPP_Copyright>
+Copyright &copy; 2005-2009, Intel Corporation. All rights reserved.
+</DIV>
+
+</body>
+</html>

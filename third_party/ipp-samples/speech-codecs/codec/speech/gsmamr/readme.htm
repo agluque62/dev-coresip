@@ -1,0 +1,138 @@
+<HTML>
+<HEAD>
+<TITLE>
+Intel&reg;Integrated Performance Primitives Sample Readme  
+</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<style>
+<!-- -->
+</style>
+</HEAD>
+<BODY text=#000000 bgColor=#ffffff>
+<CENTER>
+<H1>
+<B>
+<I>
+Intel  
+<SUP>
+&reg; 
+</SUP>
+Integrated Performance Primitives  
+<BR>
+USC GSMAMR codec  
+</I>
+</B>
+</H1>
+</CENTER>
+<H5>
+<A href="#Overview">
+Overview  
+</A>
+<BR>
+<a href="#USC Codec description">
+USC Codec description  
+</a>
+<BR>
+&nbsp;  
+</H5>
+<H2>
+<A name=Overview>
+</A>
+Overview  
+</H2>
+The USC GSMAMR speech codec is compliant with GSM06.90-94 and 3GPP TS 26 071, 
+073 specifications for GSM Adaptive Multi-Rate codec promoted by European Telecommunications Standards Institute (  
+<a href="http://www.etsi.org">
+www.etsi.org  
+</a>
+) and has been implemented using the Intel  
+<sup>
+&reg; 
+</sup>
+Integrated Performance Primitives (Intel  
+<sup>
+&reg; 
+</sup>
+IPP) Speech Coding functions.  
+<font face="Times New Roman">
+The USC GSMAMR codec  
+</font>
+supports 16bit narrowband 8000 Hz PCM signal compression and decompression with 20ms frame length at eight bitrates 4750, 5150, 5900, 6700, 7400, 7950, 10200, 12200 bps producing 95, 103, 118, 134, 148, 159, 204, 244 bits per frame (bpf) respectively.  
+<p>
+USC GSMAMR codec is compatible with 3GPP TS 26.073 v7.0.0 (2007-06) ANSI-C Code.  
+</p>
+<p>
+Additional information on this software as well as other Intel  
+<sup>
+&reg; 
+</sup>
+Software Development Products is available at  
+<A href="http://developer.intel.com/software/products/">
+http://developer.intel.com/software/products/  
+</A>
+.  
+</p>
+<H2>
+<a name="USC Codec description">
+</a>
+USC Codec description  
+</H2>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+For USC Interface description refer to USC manual.&nbsp;  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+&nbsp;  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+USC GSMAMR codec parameters:  
+</p>
+<ul>
+<li>
+<p style="margin-top: 3px; margin-bottom: 3px">
+Codec name: IPP_GSMAMR  
+</li>
+<li>
+<p style="margin-top: 3px; margin-bottom: 3px">
+Compression algorithm: Multi-Rate Algebraic Code Excited Linear Prediction&nbsp; (MR-ACELP)  
+</li>
+<li>
+<p style="margin-top: 3px; margin-bottom: 3px">
+Linkage: USC_GSMAMR_Fxns  
+</li>
+<li>
+<p style="margin-top: 3px; margin-bottom: 3px">
+Sampling: 16bit linear 8000 Hz  
+</li>
+<li>
+<p style="margin-top: 3px; margin-bottom: 3px">
+Frame: 20ms  
+</li>
+<li>
+<p style="margin-top: 3px; margin-bottom: 3px">
+Bitrates: 4750 bps (95 bpf), 5150 bps (103 bpf), 5900 bps (118 bpf), 6700 bps (134 bpf), 7400 bps (148 bpf), 7950 bps (159 bpf), 10200 bps (204 bpf), 12200 bps (244 bpf);&nbsp; SID - 35 bpf  
+</li>
+<li>
+<p style="margin-top: 3px; margin-bottom: 3px">
+Voice Activity Detection: two types of VAD supported  
+</li>
+<li>
+<p style="margin-top: 3px; margin-bottom: 3px">
+Packet Loss Concealment: PLC supported  
+</li>
+<li>
+<p style="margin-top: 3px; margin-bottom: 3px">
+Frame type (value): TX_NON_SPEECH (-1), TX_SPEECH_GOOD (0), TX_SID_FIRST(1), TX_SID_UPDATE (2), TX_NO_DATA (3), TX_SPEECH_ DEGRADED (4), TX_SPEECH_BAD (5), TX_SID_BAD (6), TX_ONSET (7)  
+</li>
+<li>
+<p style="margin-top: 3px; margin-bottom: 3px">
+Standards: ETSI EN 301 704-708, GSM06.90-94  
+</li>
+</ul>
+<BR>
+
+<DIV id=IPP_Copyright>
+Copyright &copy; 2005-2009, Intel Corporation. All rights reserved.
+</DIV>
+
+</BODY>
+</HTML>

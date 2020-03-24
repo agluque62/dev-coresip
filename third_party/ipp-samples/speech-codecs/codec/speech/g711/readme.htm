@@ -1,0 +1,204 @@
+<HTML>
+<HEAD>
+<TITLE>
+Intel&reg;Integrated Performance Primitives Sample Readme  
+</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<style>
+<!-- -->
+</style>
+</HEAD>
+<BODY text=#000000 bgColor=#ffffff>
+<CENTER>
+<H1>
+<B>
+<I>
+Intel  
+<SUP>
+&reg; 
+</SUP>
+Integrated Performance Primitives  
+<BR>
+USC G711 codec  
+</I>
+</B>
+</H1>
+</CENTER>
+<H5>
+<A href="#Overview">
+Overview  
+</A>
+<BR>
+<a href="#USC Codec description">
+USC Codec description  
+</a>
+<BR>
+&nbsp;  
+</H5>
+<H2>
+<A name=Overview>
+</A>
+Overview  
+</H2>
+The USC G711 speech codec is fully compliant with ITU-T G.711 specification for Pulse Code Modulation of Voice Frequencies with Appendixes I and II promoted by International Telecommunication Union (  
+<a href="http://www.itu.int">
+www.itu.org  
+</a>
+) and has been implemented using the Intel  
+<sup>
+&reg; 
+</sup>
+Integrated Performance Primitives (Intel  
+<sup>
+&reg; 
+</sup>
+IPP) Speech Coding functions.  
+<font face="Times New Roman">
+The USC G711 codec  
+</font>
+supports 16bit narrowband 8000 Hz PCM signal compression and decompression with 10ms frame length at 64 kbps producing 640 bits per frame (bpf).  
+<P>
+Additional information on this software as well as other Intel  
+<sup>
+&reg; 
+</sup>
+Software Development Products is available at  
+<A href="http://developer.intel.com/software/products/">
+http://developer.intel.com/software/products/  
+</A>
+.  
+<H2>
+<a name="USC Codec description">
+</a>
+USC Codec description  
+</H2>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+For USC Interface description refer to USC manual.&nbsp;  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+&nbsp;  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+USC G711 comprises of two codecs with following parameters:  
+</p>
+<ul>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Codec name: IPP_G711A  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Compression algorithm: A-law PCM  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Linkage: USC_G711A_Fxns  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Sampling rate: 16bit linear 8000 Hz  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Frame: 10ms  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Bitrates: 64000 bps (640 bpf - voice, 16 bpf - SID),  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Voice Activity Detection: VAD supported, compatible with G729B  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Packet Loss Concealment: PLC supported  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Frame types (value):  
+<span lang="EN-US" style="font-family: Times New Roman; color: black">
+Untransmitted (0), SID (1),Voice (3), Bad 1 (-1)  
+</span>
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Standards: ITU-T G711, G711I, G711II.&nbsp;  
+</p>
+</li>
+</ul>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+&nbsp;  
+</p>
+<ul>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Codec name: IPP_G711U  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Compression algorithm: Mu-law PCM  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Linkage: USC_G711U_Fxns  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Sampling rate: 8000 Hz  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Frame: 10ms  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Bitrates: 64000 bps (640 bpf - voice, 16 bpf - SID),  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Voice Activity Detection: VAD supported, compatible with G729B  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Packet Loss Concealment: PLC supported  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Frame types (value):  
+<span lang="EN-US" style="font-family: Times New Roman; color: black">
+Untransmitted (0), SID (1),Voice (3), Bad 1 (-1)  
+</span>
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Standards: ITU-T G711, G711I, G711II.&nbsp;  
+</p>
+</li>
+</ul>
+<BR>
+
+<DIV id=IPP_Copyright>
+Copyright &copy; 2005-2009, Intel Corporation. All rights reserved.
+</DIV>
+
+</BODY>
+</HTML>

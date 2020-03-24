@@ -1,0 +1,155 @@
+<HTML>
+<HEAD>
+<TITLE>
+Intel&reg;Integrated Performance Primitives Sample Readme  
+</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<style>
+<!-- -->
+</style>
+</HEAD>
+<BODY text=#000000 bgColor=#ffffff>
+<CENTER>
+<H1>
+<B>
+<I>
+Intel  
+<SUP>
+&reg; 
+</SUP>
+Integrated Performance Primitives  
+<BR>
+USC G729.1 codec  
+</I>
+</B>
+</H1>
+</CENTER>
+<H5>
+<A href="#Overview">
+Overview  
+</A>
+<BR>
+<a href="#USC Codec description">
+USC Codec description  
+</a>
+<BR>
+&nbsp;  
+</H5>
+<H2>
+<A name=Overview>
+</A>
+Overview  
+</H2>
+The USC G729.1 speech codec is compliant with ITU-T G.729.1 specification for the Embedded Variable rate wideband coder operating at 8-32 kbit/s bitstream interoperable with G.729 which is promoted by International Telecommunication Union (  
+<a href="http://www.itu.int">
+www.itu.org  
+</a>
+) and has been implemented using the Intel  
+<sup>
+&reg; 
+</sup>
+Integrated Performance Primitives (Intel  
+<sup>
+&reg; 
+</sup>
+IPP) Speech Coding functions.  
+<font face="Times New Roman">
+The USC G729.1 codec  
+</font>
+supports 16bit wideband 16000 Hz and narrowband 8000 Hz PCM signals compression and decompression with 20ms or 10ms frame lengths at variable bitrates within 8-32 kbps and has a bandwidth of 50-4000 Hz at 8 and 12 kbps and 50-7000 Hz from 14 to 32 kbps.  
+<P>
+Additional information on this software as well as other Intel  
+<sup>
+&reg; 
+</sup>
+Software Development Products is available at  
+<A href="http://developer.intel.com/software/products/">
+http://developer.intel.com/software/products/  
+</A>
+.  
+<H2>
+<a name="USC Codec description">
+</a>
+USC Codec description  
+</H2>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+For USC Interface description refer to USC manual.&nbsp;  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+&nbsp;  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+USC G729.1 codec is supported with following parameters:  
+</p>
+<ul>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Codec names: IPP_G7291  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Compression algorithms:&nbsp; Embedded CELP (50-4000 Hz),&nbsp; Time-Domain Bandwidth Extension (TD-BWE) for the higher band (4000-7000 Hz) and transform coding scheme referred as Time-Domain Aliasing Cancellation (TDAC) for full band (50-7000Hz).  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Linkage: USC_G7291_Fxns,  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Sampling: 16bit linear 8000 and 16000 Hz.  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Frame: 20ms. Two 10ms frames in G729B compatible narrowband mode or 20ms for wideband.  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Bitrates: 8000 bps (160 bpf, 20 bytes either one 20ms wb frame or two equal 10ms NB frames), 12000 bps (240 bpf, 30 bytes), 14000 bps (280 bpf, 35 bytes), 16000 bps (320 bpf, 40 bytes), 18000 bps (360 bpf, 45 bytes), 20000&nbsp; bps (400 bpf, 50 bytes), 22000 bps (440 bpf, 55 bytes), 24000 bps (480 bpf, 60 bytes), 26000 bps (520 bpf, 65 bytes), 28000 bps (560 bpf, 70 bytes), 30000 bps (600 bpf, 75 bytes), 32000 bps (640 bpf, 80 bytes).  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Voice Activity Detection: VAD supported for 729B compatible mode (decoder only)  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Packet Loss Concealment: PLC supported  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Frame type (value):  
+</p>
+<ul>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+G729EV wb codec: Voice (0), Erased (1).  
+</p>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+G729B compatible mode, depending on two consecutive 10ms frames with numbers 1,2 comprised into one 20ms frame: Voice1+Voice2 (5), SID1+Voice2 (6), Voice1+SID2 (9), SID1+SID2 (10),&nbsp; Erased( -1).  
+</p>
+</li>
+</ul>
+</li>
+<li>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+Standard: ITU-T G.729.1, Interoperable with ITU-T G.729, Annexes A, B  
+</p>
+</li>
+</ul>
+<BR>
+
+<DIV id=IPP_Copyright>
+Copyright &copy; 2005-2009, Intel Corporation. All rights reserved.
+</DIV>
+
+</BODY>
+</HTML>

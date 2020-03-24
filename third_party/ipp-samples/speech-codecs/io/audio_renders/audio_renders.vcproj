@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<VisualStudioProject
+ 	Name="audio_renders"
+ 	ProjectType="Visual C++"
+ 	Version="8.00"
+ 	ProjectGUID="{7817E567-CD16-298A-9329-11466DC4C967}"
+ 	>
+<Platforms>
+<Platform Name="Win32" />
+<Platform Name="x64" />
+</Platforms>
+<ToolFiles />
+<Configurations>
+<Configuration
+ 	Name="Debug|Win32"
+ 	CharacterSet="2"
+ 	ConfigurationType="4"
+ 	IntermediateDirectory="../../_bin/Win32/Debug/audio_renders_obj"
+ 	OutputDirectory="../../_bin/Win32/Debug"
+ 	>
+<Tool Name="VCPreBuildEventTool" />
+<Tool Name="VCCustomBuildTool" />
+<Tool Name="VCXMLDataGeneratorTool" />
+<Tool Name="VCWebServiceProxyGeneratorTool" />
+<Tool Name="VCMIDLTool" />
+<Tool Name="VCManagedResourceCompilerTool" />
+<Tool Name="VCPreLinkEventTool" />
+<Tool Name="VCPreLinkEventTool" />
+<Tool Name="VCALinkTool" />
+<Tool Name="VCAMenifestTool" />
+<Tool Name="VCXDCMakeTool" />
+<Tool Name="VCBscMakeTool" />
+<Tool Name="VCFxCopTool" />
+<Tool Name="VCAppVerifierTool" />
+<Tool Name="VCWebDeploymentTool" />
+<Tool Name="VCPostBuildEventTool" />
+<Tool
+ 	Name="VCResourceCompilerTool"
+ 	PreprocessorDefinitions="_DEBUG;WIN32;_WIN32;_WIN32_WINNT=0x500;_WINDOWS;STRICT;CLIPPING_DENORMAL_MODE;_USC_ALL"
+ 	AdditionalIncludeDirectories="include;../../."
+ 	></Tool>
+<Tool
+ 	Name="VCCLCompilerTool"
+ 	AdditionalOptions="/EHsc /GS /nologo /c"
+ 	StructMemberAlignment="5"
+ 	PreprocessorDefinitions="_DEBUG;WIN32;_WIN32;_WIN32_WINNT=0x500;_WINDOWS;STRICT;CLIPPING_DENORMAL_MODE;_USC_ALL"
+ 	BasicRuntimeChecks="3"
+ 	OpenMP="false"
+ 	RuntimeLibrary="1"
+ 	UsePrecompiledHeader="0"
+ 	Optimization="0"
+ 	EnableEnhancedInstructionSet="0"
+ 	Detect64BitPortabilityProblems="false"
+ 	AdditionalIncludeDirectories="../../core/vm_plus/include;../../io/jitter_buffers/include;$(IPPROOT)/include;../../core/vm/include/sys;include;../../core/usc/include;../../codec/speech/amrwbe/include;../../codec/speech/amrwb/include;../../codec/speech_rtp/include;../../codec/speech/gsmamr/include;../../application/usc_tones/include;../../core/vm/include;../../codec/speech/g729fp/include;../../codec/speech/vad_sr/include;../../codec/speech/g729.1/include;../../codec/speech/gsmfr/include;../../codec/speech/g722/include;../../codec/speech/g728/include;../../core/umc/include;../../codec/speech/nr/include;../../codec/speech/g722.1/include;../../codec/speech/common/include;../../codec/speech/vad/include;../../io/media_buffers/include;../../codec/speech/g711/include;../../codec/speech/ec/include;../../codec/speech/g723.1/include;../../codec/speech/g729i/include"
+ 	MinimalRebuild="false"
+ 	WarningLevel="0"
+ 	DebugInformationFormat="3"
+ 	></Tool>
+<Tool
+ 	Name="VCLibrarianTool"
+ 	OutputFile="$(OutDir)/$(ProjectName).lib"
+ 	SuppressStartupBanner="true"
+ 	></Tool>
+</Configuration>
+<Configuration
+ 	Name="Debug|x64"
+ 	CharacterSet="2"
+ 	ConfigurationType="4"
+ 	IntermediateDirectory="../../_bin/x64/Debug/audio_renders_obj"
+ 	OutputDirectory="../../_bin/x64/Debug"
+ 	>
+<Tool Name="VCPreBuildEventTool" />
+<Tool Name="VCCustomBuildTool" />
+<Tool Name="VCXMLDataGeneratorTool" />
+<Tool Name="VCWebServiceProxyGeneratorTool" />
+<Tool Name="VCMIDLTool" />
+<Tool Name="VCManagedResourceCompilerTool" />
+<Tool Name="VCPreLinkEventTool" />
+<Tool Name="VCPreLinkEventTool" />
+<Tool Name="VCALinkTool" />
+<Tool Name="VCAMenifestTool" />
+<Tool Name="VCXDCMakeTool" />
+<Tool Name="VCBscMakeTool" />
+<Tool Name="VCFxCopTool" />
+<Tool Name="VCAppVerifierTool" />
+<Tool Name="VCWebDeploymentTool" />
+<Tool Name="VCPostBuildEventTool" />
+<Tool
+ 	Name="VCResourceCompilerTool"
+ 	PreprocessorDefinitions="_DEBUG;WIN64;_WIN64;_AMD64_;_WINDOWS;STRICT;CLIPPING_DENORMAL_MODE;_USC_ALL"
+ 	AdditionalIncludeDirectories="include;../../."
+ 	></Tool>
+<Tool
+ 	Name="VCCLCompilerTool"
+ 	AdditionalOptions="/EHsc /GS /nologo /c"
+ 	StructMemberAlignment="5"
+ 	PreprocessorDefinitions="_DEBUG;WIN64;_WIN64;_AMD64_;_WINDOWS;STRICT;CLIPPING_DENORMAL_MODE;_USC_ALL"
+ 	BasicRuntimeChecks="3"
+ 	OpenMP="false"
+ 	RuntimeLibrary="1"
+ 	UsePrecompiledHeader="0"
+ 	Optimization="0"
+ 	EnableEnhancedInstructionSet="0"
+ 	Detect64BitPortabilityProblems="false"
+ 	AdditionalIncludeDirectories="../../core/vm_plus/include;../../io/jitter_buffers/include;$(IPPROOT)/include;../../core/vm/include/sys;include;../../core/usc/include;../../codec/speech/amrwbe/include;../../codec/speech/amrwb/include;../../codec/speech_rtp/include;../../codec/speech/gsmamr/include;../../application/usc_tones/include;../../core/vm/include;../../codec/speech/g729fp/include;../../codec/speech/vad_sr/include;../../codec/speech/g729.1/include;../../codec/speech/gsmfr/include;../../codec/speech/g722/include;../../codec/speech/g728/include;../../core/umc/include;../../codec/speech/nr/include;../../codec/speech/g722.1/include;../../codec/speech/common/include;../../codec/speech/vad/include;../../io/media_buffers/include;../../codec/speech/g711/include;../../codec/speech/ec/include;../../codec/speech/g723.1/include;../../codec/speech/g729i/include"
+ 	MinimalRebuild="false"
+ 	WarningLevel="0"
+ 	DebugInformationFormat="3"
+ 	></Tool>
+<Tool
+ 	Name="VCLibrarianTool"
+ 	OutputFile="$(OutDir)/$(ProjectName).lib"
+ 	SuppressStartupBanner="true"
+ 	></Tool>
+</Configuration>
+<Configuration
+ 	Name="Release|Win32"
+ 	CharacterSet="2"
+ 	ConfigurationType="4"
+ 	IntermediateDirectory="../../_bin/Win32/Release/audio_renders_obj"
+ 	OutputDirectory="../../_bin/Win32/Release"
+ 	>
+<Tool Name="VCPreBuildEventTool" />
+<Tool Name="VCCustomBuildTool" />
+<Tool Name="VCXMLDataGeneratorTool" />
+<Tool Name="VCWebServiceProxyGeneratorTool" />
+<Tool Name="VCMIDLTool" />
+<Tool Name="VCManagedResourceCompilerTool" />
+<Tool Name="VCPreLinkEventTool" />
+<Tool Name="VCPreLinkEventTool" />
+<Tool Name="VCALinkTool" />
+<Tool Name="VCAMenifestTool" />
+<Tool Name="VCXDCMakeTool" />
+<Tool Name="VCBscMakeTool" />
+<Tool Name="VCFxCopTool" />
+<Tool Name="VCAppVerifierTool" />
+<Tool Name="VCWebDeploymentTool" />
+<Tool Name="VCPostBuildEventTool" />
+<Tool
+ 	Name="VCResourceCompilerTool"
+ 	PreprocessorDefinitions="NDEBUG;WIN32;_WIN32;_WIN32_WINNT=0x500;_WINDOWS;STRICT;CLIPPING_DENORMAL_MODE;_USC_ALL"
+ 	AdditionalIncludeDirectories="include;../../."
+ 	></Tool>
+<Tool
+ 	Name="VCCLCompilerTool"
+ 	AdditionalOptions="/EHsc /GS /nologo /c"
+ 	StructMemberAlignment="5"
+ 	PreprocessorDefinitions="NDEBUG;WIN32;_WIN32;_WIN32_WINNT=0x500;_WINDOWS;STRICT;CLIPPING_DENORMAL_MODE;_USC_ALL"
+ 	InlineFunctionExpansion="2"
+ 	BasicRuntimeChecks="0"
+ 	OpenMP="false"
+ 	RuntimeLibrary="0"
+ 	UsePrecompiledHeader="0"
+ 	Optimization="3"
+ 	EnableIntrinsicFunctions="true"
+ 	EnableEnhancedInstructionSet="2"
+ 	Detect64BitPortabilityProblems="false"
+ 	AdditionalIncludeDirectories="../../core/vm_plus/include;../../io/jitter_buffers/include;$(IPPROOT)/include;../../core/vm/include/sys;include;../../core/usc/include;../../codec/speech/amrwbe/include;../../codec/speech/amrwb/include;../../codec/speech_rtp/include;../../codec/speech/gsmamr/include;../../application/usc_tones/include;../../core/vm/include;../../codec/speech/g729fp/include;../../codec/speech/vad_sr/include;../../codec/speech/g729.1/include;../../codec/speech/gsmfr/include;../../codec/speech/g722/include;../../codec/speech/g728/include;../../core/umc/include;../../codec/speech/nr/include;../../codec/speech/g722.1/include;../../codec/speech/common/include;../../codec/speech/vad/include;../../io/media_buffers/include;../../codec/speech/g711/include;../../codec/speech/ec/include;../../codec/speech/g723.1/include;../../codec/speech/g729i/include"
+ 	OmitFramePointers="true"
+ 	MinimalRebuild="false"
+ 	WarningLevel="0"
+ 	DebugInformationFormat="0"
+ 	></Tool>
+<Tool
+ 	Name="VCLibrarianTool"
+ 	OutputFile="$(OutDir)/$(ProjectName).lib"
+ 	SuppressStartupBanner="true"
+ 	></Tool>
+</Configuration>
+<Configuration
+ 	Name="Release|x64"
+ 	CharacterSet="2"
+ 	ConfigurationType="4"
+ 	IntermediateDirectory="../../_bin/x64/Release/audio_renders_obj"
+ 	OutputDirectory="../../_bin/x64/Release"
+ 	>
+<Tool Name="VCPreBuildEventTool" />
+<Tool Name="VCCustomBuildTool" />
+<Tool Name="VCXMLDataGeneratorTool" />
+<Tool Name="VCWebServiceProxyGeneratorTool" />
+<Tool Name="VCMIDLTool" />
+<Tool Name="VCManagedResourceCompilerTool" />
+<Tool Name="VCPreLinkEventTool" />
+<Tool Name="VCPreLinkEventTool" />
+<Tool Name="VCALinkTool" />
+<Tool Name="VCAMenifestTool" />
+<Tool Name="VCXDCMakeTool" />
+<Tool Name="VCBscMakeTool" />
+<Tool Name="VCFxCopTool" />
+<Tool Name="VCAppVerifierTool" />
+<Tool Name="VCWebDeploymentTool" />
+<Tool Name="VCPostBuildEventTool" />
+<Tool
+ 	Name="VCResourceCompilerTool"
+ 	PreprocessorDefinitions="NDEBUG;WIN64;_WIN64;_AMD64_;_WINDOWS;STRICT;CLIPPING_DENORMAL_MODE;_USC_ALL"
+ 	AdditionalIncludeDirectories="include;../../."
+ 	></Tool>
+<Tool
+ 	Name="VCCLCompilerTool"
+ 	AdditionalOptions="/EHsc /GS /nologo /c"
+ 	StructMemberAlignment="5"
+ 	PreprocessorDefinitions="NDEBUG;WIN64;_WIN64;_AMD64_;_WINDOWS;STRICT;CLIPPING_DENORMAL_MODE;_USC_ALL"
+ 	InlineFunctionExpansion="2"
+ 	BasicRuntimeChecks="0"
+ 	OpenMP="false"
+ 	RuntimeLibrary="0"
+ 	UsePrecompiledHeader="0"
+ 	Optimization="3"
+ 	EnableIntrinsicFunctions="true"
+ 	EnableEnhancedInstructionSet="0"
+ 	Detect64BitPortabilityProblems="false"
+ 	AdditionalIncludeDirectories="../../core/vm_plus/include;../../io/jitter_buffers/include;$(IPPROOT)/include;../../core/vm/include/sys;include;../../core/usc/include;../../codec/speech/amrwbe/include;../../codec/speech/amrwb/include;../../codec/speech_rtp/include;../../codec/speech/gsmamr/include;../../application/usc_tones/include;../../core/vm/include;../../codec/speech/g729fp/include;../../codec/speech/vad_sr/include;../../codec/speech/g729.1/include;../../codec/speech/gsmfr/include;../../codec/speech/g722/include;../../codec/speech/g728/include;../../core/umc/include;../../codec/speech/nr/include;../../codec/speech/g722.1/include;../../codec/speech/common/include;../../codec/speech/vad/include;../../io/media_buffers/include;../../codec/speech/g711/include;../../codec/speech/ec/include;../../codec/speech/g723.1/include;../../codec/speech/g729i/include"
+ 	OmitFramePointers="true"
+ 	MinimalRebuild="false"
+ 	WarningLevel="0"
+ 	DebugInformationFormat="0"
+ 	></Tool>
+<Tool
+ 	Name="VCLibrarianTool"
+ 	OutputFile="$(OutDir)/$(ProjectName).lib"
+ 	SuppressStartupBanner="true"
+ 	></Tool>
+</Configuration>
+</Configurations>
+<References />
+<Files>
+<Filter
+ 	Name="Source Files"
+ 	Filter="cpp;c;cc;cxx;def;odl;idl;hpj;asm;asmx"
+ 	>
+<File RelativePath="src\wav_file.cpp" />
+</Filter>
+<Filter
+ 	Name="Header Files"
+ 	Filter="h;hpp;hxx;hm;inl;xsd"
+ 	>
+<File RelativePath="include\audio_file.h" />
+<File RelativePath="include\wav_file.h" />
+</Filter>
+</Files>
+<Globals />
+</VisualStudioProject>

@@ -1,0 +1,412 @@
+<html>
+
+<head>
+    <title>
+    Intel&reg; IPP Samples -
+    USC Tones Processing Sample for Windows*
+    </title>
+</head>
+
+<body>
+
+
+<h1 align="center">
+    Intel<sup>&reg;</sup> Integrated Performance Primitives
+    <br>
+    USC Tones Processing Sample for Windows*
+</h1>
+
+<p>
+<b>
+<a href="#IPP_SAMPLES__Disclaimer">                             Disclaimer                             </a><br />
+<a href="#IPP_SAMPLES__License_Definitions">                    License Definitions                    </a><br />
+<a href="#IPP_SAMPLES__Overview">                               Overview                               </a><br />
+<a href="#IPP_SAMPLES__How_to_Build_Source_Code">               How to Build Source Code               </a><br />
+<a href="#IPP_SAMPLES__Running_the_Sample">                     Running the Sample                     </a><br />
+</b>
+</p>
+
+
+<h2>
+<a name=IPP_SAMPLES__Disclaimer>
+Disclaimer</a>
+</h2>
+
+<P class=MsoNormal>
+<SPAN style="FONT-SIZE: 10pt; COLOR: windowtext; ">
+INFORMATION IN THIS DOCUMENT IS PROVIDED IN CONNECTION WITH INTEL  
+<SUP>
+&reg; 
+</SUP>
+PRODUCTS. NO LICENSE, EXPRESS OR IMPLIED, BY ESTOPPEL OR OTHERWISE, TO ANY INTELLECTUAL PROPERTY RIGHTS IS GRANTED BY THIS DOCUMENT. EXCEPT AS PROVIDED IN INTEL'S TERMS AND CONDITIONS OF SALE FOR SUCH PRODUCTS, INTEL ASSUMES NO LIABILITY WHATSOEVER, AND INTEL DISCLAIMS ANY EXPRESS OR IMPLIED WARRANTY, RELATING TO SALE AND/OR USE OF INTEL PRODUCTS INCLUDING LIABILITY OR WARRANTIES RELATING TO FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR INFRINGEMENT OF ANY PATENT, COPYRIGHT OR OTHER INTELLECTUAL PROPERTY RIGHT.  
+</SPAN>
+</P>
+<P>
+Intel products are not intended for use in medical, life saving, life sustaining, critical control or safety systems, or in nuclear facility applications. Intel may make changes to specifications and product descriptions at anytime, without notice.  
+</P>
+
+
+<h2>
+<a name=IPP_SAMPLES__License_Definitions>
+License Definitions</a>
+</h2>
+
+<P>
+By downloading and installing this sample, you hereby agree that the accompanying Materials are being provided to you under the terms and conditions of the End User License Agreement for the Intel  
+<SUP>
+&reg; 
+</SUP>
+Integrated Performance Primitives (Intel  
+<SUP>
+&reg; 
+</SUP>
+IPP) product previously accepted by you. Please refer to the file  
+<B>
+ippEULA.rtf or ippEULA.txt  
+</B>
+located in the root directory of your Intel  
+<SUP>
+&reg; 
+</SUP>
+IPP product installation for more information.&nbsp;  
+</P>
+<p>
+The G.168 is international standard promoted by ITU (  
+<a style="color: blue" href="http://www.itu.int">
+http://www.itu.int  
+</a>
+). Implementations of this standard, or the standard enabled platforms may require licenses from various entities, including Intel Corporation.  
+</p>
+
+
+<h2>
+<a name="IPP_SAMPLES__Overview">
+Overview</a>
+</h2>
+
+<div class="Section1">
+<span lang="EN-US">
+The USC Tones Processing sample is a command line based application that performs /ANS and DTMF tones detection and tones generation.  
+</span>
+<p>
+<span lang="EN-US">
+The tones detector processes input PCM file either narrow band 16bit 8000 Hz or wideband 16bit 16000 Hz and creates one output text file. The output text file contains the textual name of the detect  
+</span>
+ed tone. If tone in input file aren&#8217;t detected than outfile is emp  
+<span lang="EN-US">
+ty. The /ANS tone is 2100 Hz tone with phase reversals at 450 ms. The DTMF (  
+</span>
+Dual-tone multi-frequency  
+<span lang="EN-US">
+) tone is  
+</span>
+sinusoidal tone of the two frequencies  
+<span lang="EN-US">
+:  
+</span>
+</p>
+<table class="wikitable" id="table1">
+<caption>
+DTMF keypad frequencies  
+</caption>
+<tr>
+<th align="middle">
+&nbsp;  
+</th>
+<th align="middle">
+<span style="font-weight: 400">
+1209 Hz  
+</span>
+</th>
+<th align="middle">
+<span style="font-weight: 400">
+1336 Hz  
+</span>
+</th>
+<th align="middle">
+<span style="font-weight: 400">
+1477 Hz  
+</span>
+</th>
+<th align="middle">
+<span style="font-weight: 400">
+1633 Hz  
+</span>
+</th>
+</tr>
+<tr>
+<th align="middle">
+<span style="font-weight: 400">
+697 Hz  
+</span>
+</th>
+<td align="middle">
+1  
+</td>
+<td align="middle">
+2  
+</td>
+<td align="middle">
+3  
+</td>
+<td align="middle">
+A  
+</td>
+</tr>
+<tr>
+<th align="middle">
+<span style="font-weight: 400">
+770 Hz  
+</span>
+</th>
+<td align="middle">
+4  
+</td>
+<td align="middle">
+5  
+</td>
+<td align="middle">
+6  
+</td>
+<td align="middle">
+B  
+</td>
+</tr>
+<tr>
+<th align="middle">
+<span style="font-weight: 400">
+852 Hz  
+</span>
+</th>
+<td align="middle">
+7  
+</td>
+<td align="middle">
+8  
+</td>
+<td align="middle">
+9  
+</td>
+<td align="middle">
+C  
+</td>
+</tr>
+<tr>
+<th align="middle">
+<span style="font-weight: 400">
+941 Hz  
+</span>
+</th>
+<td align="middle">
+*  
+</td>
+<td align="middle">
+0  
+</td>
+<td align="middle">
+#  
+</td>
+<td align="middle">
+D  
+</td>
+</tr>
+</table>
+<p>
+<span lang="EN-US">
+The tones generator processes input parameters for generation: tones succession (for DTMF) or one tone (for ANS) duration of tone and pause, and amplitude level, and creates one output PCM file either narrow band 16bit 8000 Hz or wideband 16bit 16000 Hz.  
+</span>
+</p>
+<p>
+<span lang="EN-US">
+The tone detection algorithm complies with ITU G.168-200  
+</span>
+<span lang="en-us">
+2  
+</span>
+<span lang="EN-US">
+and Q.23 specifications.  
+</span>
+</div>
+<p>
+Additional information on this software as well as other Intel  
+<sup>
+&reg; 
+</sup>
+Software Development Products is available at  
+<A href="http://developer.intel.com/software/products/">
+http://developer.intel.com/software/products/  
+</A>
+.
+</p>
+
+
+<h2>
+<a name="IPP_SAMPLES__How_to_Build_Source_Code">
+How to Build Source Code</a>
+</h2>
+
+<h3>
+Build target by Microsoft Visual Studio
+</h3>
+<ul>
+    <li>Set system environment variable <tt><b>IPPROOT</b></tt></li>
+    <li>Open solution/project file in related Visual Studio</li>
+    <li>Select configuration/platform you need</li>
+    <li>Build all projects in Visual Studio</li>
+</ul>
+
+
+<h2>
+<a name=IPP_SAMPLES__Running_the_Sample>
+Running the Sample</a>
+</h2>
+
+<p>
+For information on building the sample, see the  
+<span class="SpellE">
+readme  
+</span>
+file in the ipp_samples\  
+<span class="SpellE">
+speech-codecs  
+</span>
+directory.  
+</p>
+<p>
+<span lang="EN-US">
+In order to run the executable created by this sample, the Intel&reg;IPP DLLs must be on the system's path. DLLs are located in the bin subdirectory of the root directory of the Intel&reg;IPP installation (IPPROOT). This can be done by setting the PATH environment variable manually or invoking the batch file: &quot;%IPPROOT%\tools\  
+<span class="SpellE">
+env\ippenv.bat  
+</span>
+&quot; from the Intel&reg;IPP installation.  
+</span>
+</p>
+<ul>
+<li>
+To run the USC tones detector type:&nbsp;  
+</li>
+</ul>
+<p>
+<b>
+./usc_tones -dt -type DTMF/ANS [options] &lt;inPCMFile&gt; &lt;outTextFile&gt;&nbsp;  
+</b>
+</p>
+<p>
+The option list:&nbsp;  
+</p>
+<p>
+<br>
+&nbsp;  
+<b>
+-fXXX  
+</b>
+&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PCM frequency in kHz of the input file, where XXX equals 8000 or 16000.  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+<b>
+&nbsp;-n&nbsp;&nbsp;  
+</b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; output additional information&nbsp; (optional).  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+&nbsp;  
+<b>
+-o &lt;logFile&gt;  
+</b>
+&nbsp;&nbsp;&nbsp;&nbsp; write to &lt;logFile&gt; file log information (optional).  
+<br>
+<b>
+&lt;inPCMFile&gt;  
+</b>
+- input audio PCM file, 8000 Hz&nbsp; or 16000 Hz  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+<b>
+&lt;outTextFile&gt;  
+</b>
+- output text file.&nbsp;  
+</p>
+<ul>
+<li>
+To run the USC tones generator type:&nbsp;  
+</li>
+</ul>
+<p>
+<b>
+usc_tones.exe -gtXXX/ Y -type DTMF/ANS [options] &lt;outPCMFile&gt;  
+</b>
+</p>
+<p>
+The option list:&nbsp;  
+</p>
+<p>
+<br>
+&nbsp;  
+<b>
+-fXXX  
+</b>
+&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PCM frequency in kHz of the output file, where XXX equals 8000 or 16000.  
+</p>
+<p>
+<b>
+-gtXXX (or -gt Y)&nbsp;  
+</b>
+where XXX is generated succession of tones are presented in table (DTMF), Y - generated one from tones: ANS, /ANS.  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+<b>
+&nbsp;-tXXX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+</b>
+duration of tone in ms.  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+&nbsp;  
+<b>
+-pXXX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+</b>
+duration of pause in ms.  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+&nbsp;  
+<b>
+-vXXX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+</b>
+amplitude level in dB.  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+<b>
+&nbsp;-n&nbsp;&nbsp;  
+</b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; output additional information&nbsp; (optional).  
+</p>
+<p style="MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px">
+&nbsp;  
+<b>
+-o &lt;logFile&gt;  
+</b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; write to &lt;logFile&gt; file log information (optional).  
+<br>
+<b>
+&lt;outPCMFile&gt;  
+</b>
+-&nbsp; output audio PCM file, 8000 Hz&nbsp; or 16000 Hz  
+</p>
+<FONT size=-2>
+<div class="Section1">
+<p>
+Intel, the Intel logo, Intel SpeedStep, Intel NetBurst, Intel NetStructure, MMX, i386, i486, Intel386, Intel486, Intel740, IntelDX2, IntelDX4, IntelSX2,Celeron, Intel Centrino, Intel Xeon, Intel XScale, Itanium, Pentium, Pentium II Xeon, Pentium III Xeon, Pentium M, and VTune are trademarks or registered trademarks of Intel Corporation or its subsidiaries in the United States and other countries.  
+</div>
+<P>
+<BR>
+* Other names and brands may be claimed as the property of others.  
+<BR>
+<BR>
+</P>
+</FONT>
+
+<DIV id=IPP_Copyright>
+Copyright &copy; 2005-2009, Intel Corporation. All rights reserved.
+</DIV>
+
+</body>
+</html>
