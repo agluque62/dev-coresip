@@ -130,7 +130,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\portaudio\src\common;..\..\portaudio\include;..\..\portaudio\src\os\win;..\..\..\..\asiosdk2\common;..\..\..\..\asiosdk2\host;..\..\..\..\asiosdk2\host\pc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\portaudio\src\common;..\..\portaudio\include;..\..\portaudio\src\os\win;..\..\..\third_party\asiosdk2\common;..\..\..\third_party\asiosdk2\host;..\..\..\third_party\asiosdk2\host\pc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;PA_ENABLE_DEBUG_OUTPUT;_CRT_SECURE_NO_DEPRECATE;PA_NO_DS;PA_NO_WMME;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderOutputFile />
     </ClCompile>
@@ -140,7 +140,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\portaudio\src\common;..\..\portaudio\include;..\..\portaudio\src\os\win;..\..\..\..\asiosdk2\common;..\..\..\..\asiosdk2\host;..\..\..\..\asiosdk2\host\pc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\portaudio\src\common;..\..\portaudio\include;..\..\portaudio\src\os\win;..\..\..\third_party\asiosdk2\common;..\..\..\third_party\asiosdk2\host;..\..\..\third_party\asiosdk2\host\pc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;PA_ENABLE_DEBUG_OUTPUT;_CRT_SECURE_NO_DEPRECATE;PA_NO_DS;PA_NO_WMME;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderOutputFile />
     </ClCompile>
@@ -150,7 +150,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\portaudio\src\common;..\..\portaudio\include;..\..\portaudio\src\os\win;..\..\..\..\asiosdk2\common;..\..\..\..\asiosdk2\host;..\..\..\..\asiosdk2\host\pc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\portaudio\src\common;..\..\portaudio\include;..\..\portaudio\src\os\win;..\..\..\third_party\asiosdk2\common;..\..\..\third_party\asiosdk2\host;..\..\..\third_party\asiosdk2\host\pc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;PA_ENABLE_DEBUG_OUTPUT;_CRT_SECURE_NO_DEPRECATE;PA_NO_DS;PA_NO_WMME;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderOutputFile />
     </ClCompile>
@@ -160,7 +160,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\portaudio\src\common;..\..\portaudio\include;..\..\portaudio\src\os\win;..\..\..\..\asiosdk2\common;..\..\..\..\asiosdk2\host;..\..\..\..\asiosdk2\host\pc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\portaudio\src\common;..\..\portaudio\include;..\..\portaudio\src\os\win;..\..\..\third_party\asiosdk2\common;..\..\..\third_party\asiosdk2\host;..\..\..\third_party\asiosdk2\host\pc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;PA_ENABLE_DEBUG_OUTPUT;_CRT_SECURE_NO_DEPRECATE;PA_NO_DS;PA_NO_WMME;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderOutputFile />
     </ClCompile>
@@ -170,7 +170,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\portaudio\src\common;..\..\portaudio\include;..\..\portaudio\src\os\win;..\..\..\..\asiosdk2\common;..\..\..\..\asiosdk2\host;..\..\..\..\asiosdk2\host\pc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\portaudio\src\common;..\..\portaudio\include;..\..\portaudio\src\os\win;..\..\..\third_party\asiosdk2\common;..\..\..\third_party\asiosdk2\host;..\..\..\third_party\asiosdk2\host\pc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;PA_ENABLE_DEBUG_OUTPUT;_CRT_SECURE_NO_DEPRECATE;PA_NO_DS;PA_NO_WMME;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderOutputFile />
     </ClCompile>
@@ -180,7 +180,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\portaudio\src\common;..\..\portaudio\include;..\..\portaudio\src\os\win;..\..\..\..\asiosdk2\common;..\..\..\..\asiosdk2\host;..\..\..\..\asiosdk2\host\pc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\portaudio\src\common;..\..\portaudio\include;..\..\portaudio\src\os\win;..\..\..\third_party\asiosdk2\common;..\..\..\third_party\asiosdk2\host;..\..\..\third_party\asiosdk2\host\pc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;PA_ENABLE_DEBUG_OUTPUT;_CRT_SECURE_NO_DEPRECATE;PA_NO_DS;PA_NO_WMME;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderOutputFile />
     </ClCompile>
@@ -202,9 +202,9 @@
     <ClCompile Include="..\..\portaudio\src\hostapi\dsound\pa_win_ds.c" />
     <ClCompile Include="..\..\portaudio\src\hostapi\dsound\pa_win_ds_dynlink.c" />
     <ClCompile Include="..\..\portaudio\src\hostapi\wmme\pa_win_wmme.c" />
-    <ClCompile Include="..\..\..\..\ASIOSDK2\common\asio.cpp" />
-    <ClCompile Include="..\..\..\..\ASIOSDK2\host\asiodrivers.cpp" />
-    <ClCompile Include="..\..\..\..\ASIOSDK2\host\pc\asiolist.cpp" />
+    <ClCompile Include="..\..\ASIOSDK2\common\asio.cpp" />
+    <ClCompile Include="..\..\ASIOSDK2\host\asiodrivers.cpp" />
+    <ClCompile Include="..\..\ASIOSDK2\host\pc\asiolist.cpp" />
     <ClCompile Include="..\..\portaudio\src\hostapi\asio\pa_asio.cpp" />
     <ClCompile Include="..\..\portaudio\src\os\win\pa_win_hostapis.c" />
     <ClCompile Include="..\..\portaudio\src\os\win\pa_win_util.c" />

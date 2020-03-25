@@ -521,11 +521,11 @@ SipCall::SipCall(pjsua_call_id call_id, const CORESIP_CallInfo * info)
 SipCall::~SipCall()
 {
 	SipCall::SipCallCount--;
-#ifdef _DEBUG
-	PJ_LOG(3,(__FILE__, "DESTRUCTOR SipCall callid %d SipCall::SipCallCount %d", _Id, SipCall::SipCallCount));
-#else
-	PJ_LOG(5,(__FILE__, "DESTRUCTOR SipCall callid %d SipCall::SipCallCount %d", _Id, SipCall::SipCallCount));
-#endif
+//#ifdef _DEBUG
+//	PJ_LOG(3,(__FILE__, "DESTRUCTOR SipCall callid %d SipCall::SipCallCount %d", _Id, SipCall::SipCallCount));
+//#else
+//	PJ_LOG(5,(__FILE__, "DESTRUCTOR SipCall callid %d SipCall::SipCallCount %d", _Id, SipCall::SipCallCount));
+//#endif
 	
 	Dispose();
 }

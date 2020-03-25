@@ -338,3 +338,9 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+
+# Especificos de proyecto
+[Oo]utput/
+*/lib/
+*.bsc
+libpjproject*.lib

@@ -130,72 +130,72 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>../include;../../pjlib/include;../../third_party/speex/include;../../third_party;../../../ipp-samples/speech-codecs/core/usc/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../include;../../pjlib/include;../../third_party/speex/include;../../third_party;../../third_party/ipp-samples/speech-codecs/core/usc/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderOutputFile />
     </ClCompile>
     <Lib>
       <AdditionalDependencies>ippsmerged.lib;ippsemerged.lib;ippscmerged.lib;ippscemerged.lib;ippsrmerged.lib;ippsremerged.lib;ippcorel.lib;speech.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>..\lib\pjmedia_codec-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
-      <AdditionalLibraryDirectories>../../../ipp-samples/speech-codecs/_bin/Win32/$(Configuration);../../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../third_party/ipp-samples/speech-codecs/_bin/Win32/$(Configuration);../../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>/IGNORE:4006,4221</AdditionalOptions>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>../include;../../pjlib/include;../../third_party/speex/include;../../third_party;../../../ipp-samples/speech-codecs/core/usc/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../include;../../pjlib/include;../../third_party/speex/include;../../third_party;../../third_party/ipp-samples/speech-codecs/core/usc/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderOutputFile />
     </ClCompile>
     <Lib>
       <AdditionalDependencies>ippsmerged.lib;ippsemerged.lib;ippscmerged.lib;ippscemerged.lib;ippsrmerged.lib;ippsremerged.lib;ippcorel.lib;speech.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>..\lib\pjmedia_codec-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
-      <AdditionalLibraryDirectories>../../../ipp-samples/speech-codecs/_bin/Win32/$(Configuration);../../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../third_party/ipp-samples/speech-codecs/_bin/Win32/$(Configuration);../../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>/IGNORE:4006,4221</AdditionalOptions>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>../include;../../pjlib/include;../../third_party/speex/include;../../third_party;../../../ipp-samples/speech-codecs/core/usc/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../include;../../pjlib/include;../../third_party/speex/include;../../third_party;../../third_party/ipp-samples/speech-codecs/core/usc/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderOutputFile />
     </ClCompile>
     <Lib>
       <AdditionalDependencies>ippsmerged.lib;ippsemerged.lib;ippscmerged.lib;ippscemerged.lib;ippsrmerged.lib;ippsremerged.lib;ippcorel.lib;speech.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>..\lib\pjmedia_codec-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
-      <AdditionalLibraryDirectories>../../../ipp-samples/speech-codecs/_bin/Win32/Debug;../../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../third_party/ipp-samples/speech-codecs/_bin/Win32/Debug;../../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>/IGNORE:4006,4221</AdditionalOptions>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>../include;../../pjlib/include;../../third_party/speex/include;../../third_party;../../../ipp-samples/speech-codecs/core/usc/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../include;../../pjlib/include;../../third_party/speex/include;../../third_party;../../third_party/ipp-samples/speech-codecs/core/usc/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderOutputFile />
     </ClCompile>
     <Lib>
       <AdditionalDependencies>ippsmerged.lib;ippsemerged.lib;ippscmerged.lib;ippscemerged.lib;ippsrmerged.lib;ippsremerged.lib;ippcorel.lib;speech.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>..\lib\pjmedia_codec-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
-      <AdditionalLibraryDirectories>../../../ipp-samples/speech-codecs/_bin/Win32/$(Configuration);../../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../third_party/ipp-samples/speech-codecs/_bin/Win32/$(Configuration);../../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>/IGNORE:4006,4221</AdditionalOptions>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>../include;../../pjlib/include;../../third_party/speex/include;../../third_party;../../../ipp-samples/speech-codecs/core/usc/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../include;../../pjlib/include;../../third_party/speex/include;../../third_party;../../third_party/ipp-samples/speech-codecs/core/usc/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderOutputFile />
     </ClCompile>
     <Lib>
       <AdditionalDependencies>ippsmerged.lib;ippsemerged.lib;ippscmerged.lib;ippscemerged.lib;ippsrmerged.lib;ippsremerged.lib;ippcorel.lib;speech.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>..\lib\pjmedia_codec-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
-      <AdditionalLibraryDirectories>../../../ipp-samples/speech-codecs/_bin/Win32/$(Configuration);../../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../third_party/ipp-samples/speech-codecs/_bin/Win32/$(Configuration);../../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>/IGNORE:4006,4221</AdditionalOptions>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>../include;../../pjlib/include;../../third_party/speex/include;../../third_party;../../../ipp-samples/speech-codecs/core/usc/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../include;../../pjlib/include;../../third_party/speex/include;../../third_party;../../third_party/ipp-samples/speech-codecs/core/usc/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderOutputFile />
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -203,7 +203,7 @@
     <Lib>
       <AdditionalDependencies>ippsmerged.lib;ippsemerged.lib;ippscmerged.lib;ippscemerged.lib;ippsrmerged.lib;ippsremerged.lib;ippcorel.lib;speech.lib</AdditionalDependencies>
       <OutputFile>..\lib\pjmedia_codec-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
-      <AdditionalLibraryDirectories>../../../ipp-samples/speech-codecs/_bin/Win32/Release;../../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../third_party/ipp-samples/speech-codecs/_bin/Win32/Release;../../lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>
       </IgnoreSpecificDefaultLibraries>
